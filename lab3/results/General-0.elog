@@ -1,0 +1,2996 @@
+E # 0 t 0 m 1 ce -1 msg -1
+SB v 1280 rid General-0-20170208-19:41:28-28555 b 1000
+KF p -1 c "" s ""
+MC id 1 c omnetpp::cModule t lab3.layerNetwork n layerNetwork cm 1
+MS id 1 d ""
+MC id 2 c omnetpp::cModule t lab3.Node pid 1 n N1 cm 1
+GC m 2 g 0 n in o 0
+GC m 2 g 3 n out o 1
+MS id 2 d p=376,52;bgb=574,592
+MC id 3 c omnetpp::cModule t lab3.Node pid 1 n N2 cm 1
+GC m 3 g 0 n in o 0
+GC m 3 g 3 n out o 1
+MS id 3 d p=41,52;bgb=574,592
+CC sm 2 sg 3 dm 3 dg 0
+CS sm 2 sg 3 d ""
+CC sm 3 sg 3 dm 2 dg 0
+CS sm 3 sg 3 d ""
+MC id 6 c Datalink_l t lab3.Datalink_l pid 2 n datalink_l
+GC m 6 g 0 n in_a o 0
+GC m 6 g 3 n out_a o 1
+GC m 6 g 4 n in_p o 0
+GC m 6 g 7 n out_p o 1
+MS id 6 d p=275,308
+MC id 7 c Application_l t lab3.Application_l pid 2 n application_l
+GC m 7 g 0 n in o 0
+GC m 7 g 3 n out o 1
+MS id 7 d p=63,521
+MC id 8 c Physical_l t lab3.Physical_l pid 2 n physical_l
+GC m 8 g 0 n in_n o 0
+GC m 8 g 3 n out_n o 1
+GC m 8 g 4 n in_d o 0
+GC m 8 g 7 n out_d o 1
+MS id 8 d p=452,111
+CC sm 6 sg 3 dm 7 dg 0
+CC sm 7 sg 3 dm 6 dg 0
+CC sm 6 sg 7 dm 8 dg 4
+CC sm 8 sg 7 dm 6 dg 4
+CC sm 8 sg 3 dm 2 dg 3
+CC sm 2 sg 0 dm 8 dg 0
+MC id 9 c Datalink_l t lab3.Datalink_l pid 3 n datalink_l
+GC m 9 g 0 n in_a o 0
+GC m 9 g 3 n out_a o 1
+GC m 9 g 4 n in_p o 0
+GC m 9 g 7 n out_p o 1
+MS id 9 d p=275,308
+MC id 10 c Application_l t lab3.Application_l pid 3 n application_l
+GC m 10 g 0 n in o 0
+GC m 10 g 3 n out o 1
+MS id 10 d p=63,521
+MC id 11 c Physical_l t lab3.Physical_l pid 3 n physical_l
+GC m 11 g 0 n in_n o 0
+GC m 11 g 3 n out_n o 1
+GC m 11 g 4 n in_d o 0
+GC m 11 g 7 n out_d o 1
+MS id 11 d p=452,111
+CC sm 9 sg 3 dm 10 dg 0
+CC sm 10 sg 3 dm 9 dg 0
+CC sm 9 sg 7 dm 11 dg 4
+CC sm 11 sg 7 dm 9 dg 4
+CC sm 11 sg 3 dm 3 dg 3
+CC sm 3 sg 0 dm 11 dg 0
+MB sm 1 tm 2 m initialize(0)
+ME
+MB sm 1 tm 6 m initialize(0)
+CM id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe -1
+CM id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe -1
+ME
+MB sm 1 tm 7 m initialize(0)
+CM id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n "" pe -1
+BS id 2 tid 2 eid 2 etid 2 c A_PDU n "" pe 0
+CL id 2 tid 2 eid 2 etid 2 c A_PDU n "" pe 0 cid 3
+SH sm 7 sg 3
+ES t 0
+ME
+MB sm 1 tm 8 m initialize(0)
+ME
+MB sm 1 tm 3 m initialize(0)
+ME
+MB sm 1 tm 9 m initialize(0)
+CM id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n timeoutEvent pe -1
+CM id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe -1
+ME
+MB sm 1 tm 10 m initialize(0)
+ME
+MB sm 1 tm 11 m initialize(0)
+ME
+MS id 6 d "t=rcvd: 0 sent: 0;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 0 sent: 0;p=452,111"
+MS id 9 d "t=rcvd: 0 sent: 0;p=275,308"
+MS id 10 d "t=rcvd: 0 sent: 0;p=63,521"
+MS id 11 d "t=rcvd: 0 sent: 0;p=452,111"
+
+E # 1 t 0 m 6 ce 0 msg 2
+CM id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n "" pe -1
+CL id 6 tid 6 eid 2 etid 2 c DL_PDU n "" pe 1 cid 7
+BS id 6 tid 6 eid 2 etid 2 c DL_PDU n "" pe 1
+CL id 6 tid 6 eid 2 etid 2 c DL_PDU n "" pe 1 cid 8
+SH sm 6 sg 7
+ES t 0
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 0
+ES t 5
+MS id 6 d "t=rcvd: 1 sent: 1;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 0 sent: 0;p=452,111"
+MS id 9 d "t=rcvd: 0 sent: 0;p=275,308"
+MS id 10 d "t=rcvd: 0 sent: 0;p=63,521"
+MS id 11 d "t=rcvd: 0 sent: 0;p=452,111"
+
+E # 2 t 0 m 8 ce 1 msg 6
+CM id 9 tid 9 eid 9 etid 9 c omnetpp::cMessage n "" pe -1
+BS id 9 tid 9 eid 2 etid 2 c P_PDU n "" pe 2
+CL id 9 tid 9 eid 2 etid 2 c P_PDU n "" pe 2 cid 10
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 0.1
+MS id 6 d "t=rcvd: 1 sent: 1;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 1 sent: 1;p=452,111"
+MS id 9 d "t=rcvd: 0 sent: 0;p=275,308"
+MS id 10 d "t=rcvd: 0 sent: 0;p=63,521"
+MS id 11 d "t=rcvd: 0 sent: 0;p=452,111"
+
+E # 3 t 0.1 m 11 ce 2 msg 9
+CM id 11 tid 11 eid 11 etid 11 c omnetpp::cMessage n "" pe -1
+CL id 6 tid 6 eid 2 etid 2 c DL_PDU n "" pe 2 cid 12
+BS id 12 tid 6 eid 2 etid 2 c DL_PDU n "" pe 3
+CL id 12 tid 6 eid 2 etid 2 c DL_PDU n "" pe 3 cid 13
+SH sm 11 sg 7
+ES t 0.1
+DM id 9 tid 9 eid 9 etid 9 c omnetpp::cMessage n "" pe 3
+MS id 6 d "t=rcvd: 1 sent: 1;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 1 sent: 1;p=452,111"
+MS id 9 d "t=rcvd: 0 sent: 0;p=275,308"
+MS id 10 d "t=rcvd: 0 sent: 0;p=63,521"
+MS id 11 d "t=rcvd: 1 sent: 1;p=452,111"
+
+E # 4 t 0.1 m 9 ce 3 msg 12
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 0
+ES t 1.1
+MS id 6 d "t=rcvd: 1 sent: 1;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 1 sent: 1;p=452,111"
+MS id 9 d "t=rcvd: 1 sent: 0;p=275,308"
+MS id 10 d "t=rcvd: 0 sent: 0;p=63,521"
+MS id 11 d "t=rcvd: 1 sent: 1;p=452,111"
+
+E # 5 t 1.1 m 9 ce 4 msg 5
+CL id 2 tid 2 eid 2 etid 2 c A_PDU n "" pe 1 cid 14
+BS id 14 tid 2 eid 14 etid 2 c A_PDU n "" pe 5
+CL id 14 tid 2 eid 14 etid 2 c A_PDU n "" pe 5 cid 15
+SH sm 9 sg 3
+ES t 1.1
+MS id 6 d "t=rcvd: 1 sent: 1;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 1 sent: 1;p=452,111"
+MS id 9 d "t=rcvd: 1 sent: 1;p=275,308"
+MS id 10 d "t=rcvd: 0 sent: 0;p=63,521"
+MS id 11 d "t=rcvd: 1 sent: 1;p=452,111"
+
+E # 6 t 1.1 m 10 ce 5 msg 14
+CM id 16 tid 16 eid 16 etid 16 c omnetpp::cMessage n "" pe -1
+BS id 16 tid 16 eid 16 etid 16 c A_PDU n "" pe 6
+CL id 16 tid 16 eid 16 etid 16 c A_PDU n "" pe 6 cid 17
+SH sm 10 sg 3
+ES t 1.1
+DM id 14 tid 2 eid 14 etid 2 c omnetpp::cMessage n "" pe 6
+MS id 6 d "t=rcvd: 1 sent: 1;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 1 sent: 1;p=452,111"
+MS id 9 d "t=rcvd: 1 sent: 1;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 1 sent: 1;p=452,111"
+
+E # 7 t 1.1 m 9 ce 6 msg 16
+CM id 18 tid 18 eid 18 etid 18 c omnetpp::cMessage n "" pe -1
+BS id 18 tid 18 eid 16 etid 16 c DL_PDU n "" pe 7
+CL id 18 tid 18 eid 16 etid 16 c DL_PDU n "" pe 7 cid 19
+SH sm 9 sg 7
+ES t 1.1
+MS id 6 d "t=rcvd: 1 sent: 1;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 1 sent: 1;p=452,111"
+MS id 9 d "t=rcvd: 2 sent: 2;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 1 sent: 1;p=452,111"
+
+E # 8 t 1.1 m 11 ce 7 msg 18
+CM id 20 tid 20 eid 20 etid 20 c omnetpp::cMessage n "" pe -1
+BS id 20 tid 20 eid 16 etid 16 c P_PDU n "" pe 8
+CL id 20 tid 20 eid 16 etid 16 c P_PDU n "" pe 8 cid 21
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 1.2
+MS id 6 d "t=rcvd: 1 sent: 1;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 1 sent: 1;p=452,111"
+MS id 9 d "t=rcvd: 2 sent: 2;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 2 sent: 2;p=452,111"
+
+E # 9 t 1.2 m 8 ce 8 msg 20
+CM id 22 tid 22 eid 22 etid 22 c omnetpp::cMessage n "" pe -1
+CL id 18 tid 18 eid 16 etid 16 c DL_PDU n "" pe 8 cid 23
+BS id 23 tid 18 eid 16 etid 16 c DL_PDU n "" pe 9
+CL id 23 tid 18 eid 16 etid 16 c DL_PDU n "" pe 9 cid 24
+SH sm 8 sg 7
+ES t 1.2
+DM id 20 tid 20 eid 20 etid 20 c omnetpp::cMessage n "" pe 9
+MS id 6 d "t=rcvd: 1 sent: 1;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 2 sent: 2;p=452,111"
+MS id 9 d "t=rcvd: 2 sent: 2;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 2 sent: 2;p=452,111"
+
+E # 10 t 1.2 m 6 ce 9 msg 23
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 1
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 0
+ES t 2.2
+MS id 6 d "t=rcvd: 2 sent: 1;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 2 sent: 2;p=452,111"
+MS id 9 d "t=rcvd: 2 sent: 2;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 2 sent: 2;p=452,111"
+
+E # 11 t 2.2 m 6 ce 10 msg 1
+CL id 16 tid 16 eid 16 etid 16 c A_PDU n "" pe 7 cid 25
+BS id 25 tid 16 eid 25 etid 16 c A_PDU n "" pe 11
+CL id 25 tid 16 eid 25 etid 16 c A_PDU n "" pe 11 cid 26
+SH sm 6 sg 3
+ES t 2.2
+MS id 6 d "t=rcvd: 2 sent: 2;p=275,308"
+MS id 7 d "t=rcvd: 0 sent: 1;p=63,521"
+MS id 8 d "t=rcvd: 2 sent: 2;p=452,111"
+MS id 9 d "t=rcvd: 2 sent: 2;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 2 sent: 2;p=452,111"
+
+E # 12 t 2.2 m 7 ce 11 msg 25
+CM id 27 tid 27 eid 27 etid 27 c omnetpp::cMessage n "" pe -1
+BS id 27 tid 27 eid 27 etid 27 c A_PDU n "" pe 12
+CL id 27 tid 27 eid 27 etid 27 c A_PDU n "" pe 12 cid 28
+SH sm 7 sg 3
+ES t 2.2
+DM id 25 tid 16 eid 25 etid 16 c omnetpp::cMessage n "" pe 12
+MS id 6 d "t=rcvd: 2 sent: 2;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 2 sent: 2;p=452,111"
+MS id 9 d "t=rcvd: 2 sent: 2;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 2 sent: 2;p=452,111"
+
+E # 13 t 2.2 m 6 ce 12 msg 27
+CM id 29 tid 29 eid 29 etid 29 c omnetpp::cMessage n "" pe -1
+CL id 29 tid 29 eid 27 etid 27 c DL_PDU n "" pe 13 cid 30
+BS id 29 tid 29 eid 27 etid 27 c DL_PDU n "" pe 13
+CL id 29 tid 29 eid 27 etid 27 c DL_PDU n "" pe 13 cid 31
+SH sm 6 sg 7
+ES t 2.2
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 10
+ES t 7.2
+MS id 6 d "t=rcvd: 3 sent: 3;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 2 sent: 2;p=452,111"
+MS id 9 d "t=rcvd: 2 sent: 2;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 2 sent: 2;p=452,111"
+
+E # 14 t 2.2 m 8 ce 13 msg 29
+CM id 32 tid 32 eid 32 etid 32 c omnetpp::cMessage n "" pe -1
+BS id 32 tid 32 eid 27 etid 27 c P_PDU n "" pe 14
+CL id 32 tid 32 eid 27 etid 27 c P_PDU n "" pe 14 cid 33
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 2.3
+MS id 6 d "t=rcvd: 3 sent: 3;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 3 sent: 3;p=452,111"
+MS id 9 d "t=rcvd: 2 sent: 2;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 2 sent: 2;p=452,111"
+
+E # 15 t 2.3 m 11 ce 14 msg 32
+CM id 34 tid 34 eid 34 etid 34 c omnetpp::cMessage n "" pe -1
+CL id 29 tid 29 eid 27 etid 27 c DL_PDU n "" pe 14 cid 35
+BS id 35 tid 29 eid 27 etid 27 c DL_PDU n "" pe 15
+CL id 35 tid 29 eid 27 etid 27 c DL_PDU n "" pe 15 cid 36
+SH sm 11 sg 7
+ES t 2.3
+DM id 32 tid 32 eid 32 etid 32 c omnetpp::cMessage n "" pe 15
+MS id 6 d "t=rcvd: 3 sent: 3;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 3 sent: 3;p=452,111"
+MS id 9 d "t=rcvd: 2 sent: 2;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 3 sent: 3;p=452,111"
+
+E # 16 t 2.3 m 9 ce 15 msg 35
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 5
+ES t 3.3
+MS id 6 d "t=rcvd: 3 sent: 3;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 3 sent: 3;p=452,111"
+MS id 9 d "t=rcvd: 3 sent: 2;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 3 sent: 3;p=452,111"
+
+E # 17 t 3.3 m 9 ce 16 msg 5
+CL id 27 tid 27 eid 27 etid 27 c A_PDU n "" pe 13 cid 37
+BS id 37 tid 27 eid 37 etid 27 c A_PDU n "" pe 17
+CL id 37 tid 27 eid 37 etid 27 c A_PDU n "" pe 17 cid 38
+SH sm 9 sg 3
+ES t 3.3
+MS id 6 d "t=rcvd: 3 sent: 3;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 3 sent: 3;p=452,111"
+MS id 9 d "t=rcvd: 3 sent: 3;p=275,308"
+MS id 10 d "t=rcvd: 1 sent: 1;p=63,521"
+MS id 11 d "t=rcvd: 3 sent: 3;p=452,111"
+
+E # 18 t 3.3 m 10 ce 17 msg 37
+CM id 39 tid 39 eid 39 etid 39 c omnetpp::cMessage n "" pe -1
+BS id 39 tid 39 eid 39 etid 39 c A_PDU n "" pe 18
+CL id 39 tid 39 eid 39 etid 39 c A_PDU n "" pe 18 cid 40
+SH sm 10 sg 3
+ES t 3.3
+DM id 37 tid 27 eid 37 etid 27 c omnetpp::cMessage n "" pe 18
+MS id 6 d "t=rcvd: 3 sent: 3;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 3 sent: 3;p=452,111"
+MS id 9 d "t=rcvd: 3 sent: 3;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 3 sent: 3;p=452,111"
+
+E # 19 t 3.3 m 9 ce 18 msg 39
+CM id 41 tid 41 eid 41 etid 41 c omnetpp::cMessage n "" pe -1
+BS id 41 tid 41 eid 39 etid 39 c DL_PDU n "" pe 19
+CL id 41 tid 41 eid 39 etid 39 c DL_PDU n "" pe 19 cid 42
+SH sm 9 sg 7
+ES t 3.3
+MS id 6 d "t=rcvd: 3 sent: 3;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 3 sent: 3;p=452,111"
+MS id 9 d "t=rcvd: 4 sent: 4;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 3 sent: 3;p=452,111"
+
+E # 20 t 3.3 m 11 ce 19 msg 41
+CM id 43 tid 43 eid 43 etid 43 c omnetpp::cMessage n "" pe -1
+BS id 43 tid 43 eid 39 etid 39 c P_PDU n "" pe 20
+CL id 43 tid 43 eid 39 etid 39 c P_PDU n "" pe 20 cid 44
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 3.4
+MS id 6 d "t=rcvd: 3 sent: 3;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 3 sent: 3;p=452,111"
+MS id 9 d "t=rcvd: 4 sent: 4;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 4 sent: 4;p=452,111"
+
+E # 21 t 3.4 m 8 ce 20 msg 43
+CM id 45 tid 45 eid 45 etid 45 c omnetpp::cMessage n "" pe -1
+CL id 41 tid 41 eid 39 etid 39 c DL_PDU n "" pe 20 cid 46
+BS id 46 tid 41 eid 39 etid 39 c DL_PDU n "" pe 21
+CL id 46 tid 41 eid 39 etid 39 c DL_PDU n "" pe 21 cid 47
+SH sm 8 sg 7
+ES t 3.4
+DM id 43 tid 43 eid 43 etid 43 c omnetpp::cMessage n "" pe 21
+MS id 6 d "t=rcvd: 3 sent: 3;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 4 sent: 4;p=452,111"
+MS id 9 d "t=rcvd: 4 sent: 4;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 4 sent: 4;p=452,111"
+
+E # 22 t 3.4 m 6 ce 21 msg 46
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 13
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 11
+ES t 4.4
+MS id 6 d "t=rcvd: 4 sent: 3;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 4 sent: 4;p=452,111"
+MS id 9 d "t=rcvd: 4 sent: 4;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 4 sent: 4;p=452,111"
+
+E # 23 t 4.4 m 6 ce 22 msg 1
+CL id 39 tid 39 eid 39 etid 39 c A_PDU n "" pe 19 cid 48
+BS id 48 tid 39 eid 48 etid 39 c A_PDU n "" pe 23
+CL id 48 tid 39 eid 48 etid 39 c A_PDU n "" pe 23 cid 49
+SH sm 6 sg 3
+ES t 4.4
+MS id 6 d "t=rcvd: 4 sent: 4;p=275,308"
+MS id 7 d "t=rcvd: 1 sent: 2;p=63,521"
+MS id 8 d "t=rcvd: 4 sent: 4;p=452,111"
+MS id 9 d "t=rcvd: 4 sent: 4;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 4 sent: 4;p=452,111"
+
+E # 24 t 4.4 m 7 ce 23 msg 48
+CM id 50 tid 50 eid 50 etid 50 c omnetpp::cMessage n "" pe -1
+BS id 50 tid 50 eid 50 etid 50 c A_PDU n "" pe 24
+CL id 50 tid 50 eid 50 etid 50 c A_PDU n "" pe 24 cid 51
+SH sm 7 sg 3
+ES t 4.4
+DM id 48 tid 39 eid 48 etid 39 c omnetpp::cMessage n "" pe 24
+MS id 6 d "t=rcvd: 4 sent: 4;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 4 sent: 4;p=452,111"
+MS id 9 d "t=rcvd: 4 sent: 4;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 4 sent: 4;p=452,111"
+
+E # 25 t 4.4 m 6 ce 24 msg 50
+CM id 52 tid 52 eid 52 etid 52 c omnetpp::cMessage n "" pe -1
+CL id 52 tid 52 eid 50 etid 50 c DL_PDU n "" pe 25 cid 53
+BS id 52 tid 52 eid 50 etid 50 c DL_PDU n "" pe 25
+CL id 52 tid 52 eid 50 etid 50 c DL_PDU n "" pe 25 cid 54
+SH sm 6 sg 7
+ES t 4.4
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 22
+ES t 9.4
+MS id 6 d "t=rcvd: 5 sent: 5;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 4 sent: 4;p=452,111"
+MS id 9 d "t=rcvd: 4 sent: 4;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 4 sent: 4;p=452,111"
+
+E # 26 t 4.4 m 8 ce 25 msg 52
+CM id 55 tid 55 eid 55 etid 55 c omnetpp::cMessage n "" pe -1
+BS id 55 tid 55 eid 50 etid 50 c P_PDU n "" pe 26
+CL id 55 tid 55 eid 50 etid 50 c P_PDU n "" pe 26 cid 56
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 4.5
+MS id 6 d "t=rcvd: 5 sent: 5;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 5 sent: 5;p=452,111"
+MS id 9 d "t=rcvd: 4 sent: 4;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 4 sent: 4;p=452,111"
+
+E # 27 t 4.5 m 11 ce 26 msg 55
+CM id 57 tid 57 eid 57 etid 57 c omnetpp::cMessage n "" pe -1
+CL id 52 tid 52 eid 50 etid 50 c DL_PDU n "" pe 26 cid 58
+BS id 58 tid 52 eid 50 etid 50 c DL_PDU n "" pe 27
+CL id 58 tid 52 eid 50 etid 50 c DL_PDU n "" pe 27 cid 59
+SH sm 11 sg 7
+ES t 4.5
+DM id 55 tid 55 eid 55 etid 55 c omnetpp::cMessage n "" pe 27
+MS id 6 d "t=rcvd: 5 sent: 5;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 5 sent: 5;p=452,111"
+MS id 9 d "t=rcvd: 4 sent: 4;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 5 sent: 5;p=452,111"
+
+E # 28 t 4.5 m 9 ce 27 msg 58
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 17
+ES t 5.5
+MS id 6 d "t=rcvd: 5 sent: 5;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 5 sent: 5;p=452,111"
+MS id 9 d "t=rcvd: 5 sent: 4;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 5 sent: 5;p=452,111"
+
+E # 29 t 5.5 m 9 ce 28 msg 5
+CL id 50 tid 50 eid 50 etid 50 c A_PDU n "" pe 25 cid 60
+BS id 60 tid 50 eid 60 etid 50 c A_PDU n "" pe 29
+CL id 60 tid 50 eid 60 etid 50 c A_PDU n "" pe 29 cid 61
+SH sm 9 sg 3
+ES t 5.5
+MS id 6 d "t=rcvd: 5 sent: 5;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 5 sent: 5;p=452,111"
+MS id 9 d "t=rcvd: 5 sent: 5;p=275,308"
+MS id 10 d "t=rcvd: 2 sent: 2;p=63,521"
+MS id 11 d "t=rcvd: 5 sent: 5;p=452,111"
+
+E # 30 t 5.5 m 10 ce 29 msg 60
+CM id 62 tid 62 eid 62 etid 62 c omnetpp::cMessage n "" pe -1
+BS id 62 tid 62 eid 62 etid 62 c A_PDU n "" pe 30
+CL id 62 tid 62 eid 62 etid 62 c A_PDU n "" pe 30 cid 63
+SH sm 10 sg 3
+ES t 5.5
+DM id 60 tid 50 eid 60 etid 50 c omnetpp::cMessage n "" pe 30
+MS id 6 d "t=rcvd: 5 sent: 5;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 5 sent: 5;p=452,111"
+MS id 9 d "t=rcvd: 5 sent: 5;p=275,308"
+MS id 10 d "t=rcvd: 3 sent: 3;p=63,521"
+MS id 11 d "t=rcvd: 5 sent: 5;p=452,111"
+
+E # 31 t 5.5 m 9 ce 30 msg 62
+CM id 64 tid 64 eid 64 etid 64 c omnetpp::cMessage n "" pe -1
+BS id 64 tid 64 eid 62 etid 62 c DL_PDU n "" pe 31
+CL id 64 tid 64 eid 62 etid 62 c DL_PDU n "" pe 31 cid 65
+SH sm 9 sg 7
+ES t 5.5
+MS id 6 d "t=rcvd: 5 sent: 5;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 5 sent: 5;p=452,111"
+MS id 9 d "t=rcvd: 6 sent: 6;p=275,308"
+MS id 10 d "t=rcvd: 3 sent: 3;p=63,521"
+MS id 11 d "t=rcvd: 5 sent: 5;p=452,111"
+
+E # 32 t 5.5 m 11 ce 31 msg 64
+CM id 66 tid 66 eid 66 etid 66 c omnetpp::cMessage n "" pe -1
+BS id 66 tid 66 eid 62 etid 62 c P_PDU n "" pe 32
+CL id 66 tid 66 eid 62 etid 62 c P_PDU n "" pe 32 cid 67
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 5.6
+MS id 6 d "t=rcvd: 5 sent: 5;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 5 sent: 5;p=452,111"
+MS id 9 d "t=rcvd: 6 sent: 6;p=275,308"
+MS id 10 d "t=rcvd: 3 sent: 3;p=63,521"
+MS id 11 d "t=rcvd: 6 sent: 6;p=452,111"
+
+E # 33 t 5.6 m 8 ce 32 msg 66
+- INFO (Physical_l)layerNetwork.N1.physical_l: "Losing" message
+DM id 66 tid 66 eid 66 etid 66 c omnetpp::cMessage n "" pe 33
+MS id 6 d "t=rcvd: 5 sent: 5;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 6 sent: 5;p=452,111"
+MS id 9 d "t=rcvd: 6 sent: 6;p=275,308"
+MS id 10 d "t=rcvd: 3 sent: 3;p=63,521"
+MS id 11 d "t=rcvd: 6 sent: 6;p=452,111"
+
+E # 34 t 9.4 m 6 ce 25 msg 0
+- INFO (Datalink_l)layerNetwork.N1.datalink_l: Timeout expired, resending message and restarting timer
+BS id 53 tid 52 eid 50 etid 50 c DL_PDU n "" pe 25
+CL id 53 tid 52 eid 50 etid 50 c DL_PDU n "" pe 25 cid 68
+SH sm 6 sg 7
+ES t 9.4
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 34
+ES t 14.4
+MS id 6 d "t=rcvd: 5 sent: 6;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 6 sent: 5;p=452,111"
+MS id 9 d "t=rcvd: 6 sent: 6;p=275,308"
+MS id 10 d "t=rcvd: 3 sent: 3;p=63,521"
+MS id 11 d "t=rcvd: 6 sent: 6;p=452,111"
+
+E # 35 t 9.4 m 8 ce 34 msg 53
+CM id 69 tid 69 eid 69 etid 69 c omnetpp::cMessage n "" pe -1
+BS id 69 tid 69 eid 50 etid 50 c P_PDU n "" pe 35
+CL id 69 tid 69 eid 50 etid 50 c P_PDU n "" pe 35 cid 70
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 9.5
+MS id 6 d "t=rcvd: 5 sent: 6;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 7 sent: 6;p=452,111"
+MS id 9 d "t=rcvd: 6 sent: 6;p=275,308"
+MS id 10 d "t=rcvd: 3 sent: 3;p=63,521"
+MS id 11 d "t=rcvd: 6 sent: 6;p=452,111"
+
+E # 36 t 9.5 m 11 ce 35 msg 69
+CM id 71 tid 71 eid 71 etid 71 c omnetpp::cMessage n "" pe -1
+CL id 53 tid 52 eid 50 etid 50 c DL_PDU n "" pe 35 cid 72
+BS id 72 tid 52 eid 50 etid 50 c DL_PDU n "" pe 36
+CL id 72 tid 52 eid 50 etid 50 c DL_PDU n "" pe 36 cid 73
+SH sm 11 sg 7
+ES t 9.5
+DM id 69 tid 69 eid 69 etid 69 c omnetpp::cMessage n "" pe 36
+MS id 6 d "t=rcvd: 5 sent: 6;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 7 sent: 6;p=452,111"
+MS id 9 d "t=rcvd: 6 sent: 6;p=275,308"
+MS id 10 d "t=rcvd: 3 sent: 3;p=63,521"
+MS id 11 d "t=rcvd: 7 sent: 7;p=452,111"
+
+E # 37 t 9.5 m 9 ce 36 msg 72
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 29
+ES t 11.5
+MS id 6 d "t=rcvd: 5 sent: 6;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 7 sent: 6;p=452,111"
+MS id 9 d "t=rcvd: 7 sent: 6;p=275,308"
+MS id 10 d "t=rcvd: 3 sent: 3;p=63,521"
+MS id 11 d "t=rcvd: 7 sent: 7;p=452,111"
+
+E # 38 t 11.5 m 9 ce 37 msg 5
+CL id 50 tid 50 eid 50 etid 50 c A_PDU n "" pe 29 cid 74
+BS id 74 tid 50 eid 74 etid 50 c A_PDU n "" pe 38
+CL id 74 tid 50 eid 74 etid 50 c A_PDU n "" pe 38 cid 75
+SH sm 9 sg 3
+ES t 11.5
+MS id 6 d "t=rcvd: 5 sent: 6;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 7 sent: 6;p=452,111"
+MS id 9 d "t=rcvd: 7 sent: 7;p=275,308"
+MS id 10 d "t=rcvd: 3 sent: 3;p=63,521"
+MS id 11 d "t=rcvd: 7 sent: 7;p=452,111"
+
+E # 39 t 11.5 m 10 ce 38 msg 74
+CM id 76 tid 76 eid 76 etid 76 c omnetpp::cMessage n "" pe -1
+BS id 76 tid 76 eid 76 etid 76 c A_PDU n "" pe 39
+CL id 76 tid 76 eid 76 etid 76 c A_PDU n "" pe 39 cid 77
+SH sm 10 sg 3
+ES t 11.5
+DM id 74 tid 50 eid 74 etid 50 c omnetpp::cMessage n "" pe 39
+MS id 6 d "t=rcvd: 5 sent: 6;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 7 sent: 6;p=452,111"
+MS id 9 d "t=rcvd: 7 sent: 7;p=275,308"
+MS id 10 d "t=rcvd: 4 sent: 4;p=63,521"
+MS id 11 d "t=rcvd: 7 sent: 7;p=452,111"
+
+E # 40 t 11.5 m 9 ce 39 msg 76
+CM id 78 tid 78 eid 78 etid 78 c omnetpp::cMessage n "" pe -1
+BS id 78 tid 78 eid 76 etid 76 c DL_PDU n "" pe 40
+CL id 78 tid 78 eid 76 etid 76 c DL_PDU n "" pe 40 cid 79
+SH sm 9 sg 7
+ES t 11.5
+MS id 6 d "t=rcvd: 5 sent: 6;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 7 sent: 6;p=452,111"
+MS id 9 d "t=rcvd: 8 sent: 8;p=275,308"
+MS id 10 d "t=rcvd: 4 sent: 4;p=63,521"
+MS id 11 d "t=rcvd: 7 sent: 7;p=452,111"
+
+E # 41 t 11.5 m 11 ce 40 msg 78
+CM id 80 tid 80 eid 80 etid 80 c omnetpp::cMessage n "" pe -1
+BS id 80 tid 80 eid 76 etid 76 c P_PDU n "" pe 41
+CL id 80 tid 80 eid 76 etid 76 c P_PDU n "" pe 41 cid 81
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 11.6
+MS id 6 d "t=rcvd: 5 sent: 6;p=275,308"
+MS id 7 d "t=rcvd: 2 sent: 3;p=63,521"
+MS id 8 d "t=rcvd: 7 sent: 6;p=452,111"
+MS id 9 d "t=rcvd: 8 sent: 8;p=275,308"
+MS id 10 d "t=rcvd: 4 sent: 4;p=63,521"
+MS id 11 d "t=rcvd: 8 sent: 8;p=452,111"
+
+E # 42 t 11.6 m 8 ce 41 msg 80
+CM id 82 tid 82 eid 82 etid 82 c omnetpp::cMessage n "" pe -1
+CL id 78 tid 78 eid 76 etid 76 c DL_PDU n "" pe 41 cid 83
+BS id 83 tid 78 eid 76 etid 76 c DL_PDU n "" pe 42
+CL id 83 tid 78 eid 76 etid 76 c DL_PDU n "" pe 42 cid 84
+SH sm 8 sg 7
+ES t 11.6
+DM id 80 tid 80 eid 80 etid 80 c omnetpp::cMessage n "" pe 42
+
+E # 43 t 11.6 m 6 ce 42 msg 83
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 34
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 23
+ES t 12.6
+
+E # 44 t 12.6 m 6 ce 43 msg 1
+CL id 76 tid 76 eid 76 etid 76 c A_PDU n "" pe 40 cid 85
+BS id 85 tid 76 eid 85 etid 76 c A_PDU n "" pe 44
+CL id 85 tid 76 eid 85 etid 76 c A_PDU n "" pe 44 cid 86
+SH sm 6 sg 3
+ES t 12.6
+
+E # 45 t 12.6 m 7 ce 44 msg 85
+CM id 87 tid 87 eid 87 etid 87 c omnetpp::cMessage n "" pe -1
+BS id 87 tid 87 eid 87 etid 87 c A_PDU n "" pe 45
+CL id 87 tid 87 eid 87 etid 87 c A_PDU n "" pe 45 cid 88
+SH sm 7 sg 3
+ES t 12.6
+DM id 85 tid 76 eid 85 etid 76 c omnetpp::cMessage n "" pe 45
+
+E # 46 t 12.6 m 6 ce 45 msg 87
+CM id 89 tid 89 eid 89 etid 89 c omnetpp::cMessage n "" pe -1
+CL id 89 tid 89 eid 87 etid 87 c DL_PDU n "" pe 46 cid 90
+BS id 89 tid 89 eid 87 etid 87 c DL_PDU n "" pe 46
+CL id 89 tid 89 eid 87 etid 87 c DL_PDU n "" pe 46 cid 91
+SH sm 6 sg 7
+ES t 12.6
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 43
+ES t 17.6
+
+E # 47 t 12.6 m 8 ce 46 msg 89
+CM id 92 tid 92 eid 92 etid 92 c omnetpp::cMessage n "" pe -1
+BS id 92 tid 92 eid 87 etid 87 c P_PDU n "" pe 47
+CL id 92 tid 92 eid 87 etid 87 c P_PDU n "" pe 47 cid 93
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 12.7
+
+E # 48 t 12.7 m 11 ce 47 msg 92
+CM id 94 tid 94 eid 94 etid 94 c omnetpp::cMessage n "" pe -1
+CL id 89 tid 89 eid 87 etid 87 c DL_PDU n "" pe 47 cid 95
+BS id 95 tid 89 eid 87 etid 87 c DL_PDU n "" pe 48
+CL id 95 tid 89 eid 87 etid 87 c DL_PDU n "" pe 48 cid 96
+SH sm 11 sg 7
+ES t 12.7
+DM id 92 tid 92 eid 92 etid 92 c omnetpp::cMessage n "" pe 48
+
+E # 49 t 12.7 m 9 ce 48 msg 95
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 38
+ES t 13.7
+
+E # 50 t 13.7 m 9 ce 49 msg 5
+CL id 87 tid 87 eid 87 etid 87 c A_PDU n "" pe 46 cid 97
+BS id 97 tid 87 eid 97 etid 87 c A_PDU n "" pe 50
+CL id 97 tid 87 eid 97 etid 87 c A_PDU n "" pe 50 cid 98
+SH sm 9 sg 3
+ES t 13.7
+
+E # 51 t 13.7 m 10 ce 50 msg 97
+CM id 99 tid 99 eid 99 etid 99 c omnetpp::cMessage n "" pe -1
+BS id 99 tid 99 eid 99 etid 99 c A_PDU n "" pe 51
+CL id 99 tid 99 eid 99 etid 99 c A_PDU n "" pe 51 cid 100
+SH sm 10 sg 3
+ES t 13.7
+DM id 97 tid 87 eid 97 etid 87 c omnetpp::cMessage n "" pe 51
+
+E # 52 t 13.7 m 9 ce 51 msg 99
+CM id 101 tid 101 eid 101 etid 101 c omnetpp::cMessage n "" pe -1
+BS id 101 tid 101 eid 99 etid 99 c DL_PDU n "" pe 52
+CL id 101 tid 101 eid 99 etid 99 c DL_PDU n "" pe 52 cid 102
+SH sm 9 sg 7
+ES t 13.7
+
+E # 53 t 13.7 m 11 ce 52 msg 101
+CM id 103 tid 103 eid 103 etid 103 c omnetpp::cMessage n "" pe -1
+BS id 103 tid 103 eid 99 etid 99 c P_PDU n "" pe 53
+CL id 103 tid 103 eid 99 etid 99 c P_PDU n "" pe 53 cid 104
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 13.8
+
+E # 54 t 13.8 m 8 ce 53 msg 103
+CM id 105 tid 105 eid 105 etid 105 c omnetpp::cMessage n "" pe -1
+CL id 101 tid 101 eid 99 etid 99 c DL_PDU n "" pe 53 cid 106
+BS id 106 tid 101 eid 99 etid 99 c DL_PDU n "" pe 54
+CL id 106 tid 101 eid 99 etid 99 c DL_PDU n "" pe 54 cid 107
+SH sm 8 sg 7
+ES t 13.8
+DM id 103 tid 103 eid 103 etid 103 c omnetpp::cMessage n "" pe 54
+
+E # 55 t 13.8 m 6 ce 54 msg 106
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 46
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 44
+ES t 14.8
+
+E # 56 t 14.8 m 6 ce 55 msg 1
+CL id 99 tid 99 eid 99 etid 99 c A_PDU n "" pe 52 cid 108
+BS id 108 tid 99 eid 108 etid 99 c A_PDU n "" pe 56
+CL id 108 tid 99 eid 108 etid 99 c A_PDU n "" pe 56 cid 109
+SH sm 6 sg 3
+ES t 14.8
+
+E # 57 t 14.8 m 7 ce 56 msg 108
+CM id 110 tid 110 eid 110 etid 110 c omnetpp::cMessage n "" pe -1
+BS id 110 tid 110 eid 110 etid 110 c A_PDU n "" pe 57
+CL id 110 tid 110 eid 110 etid 110 c A_PDU n "" pe 57 cid 111
+SH sm 7 sg 3
+ES t 14.8
+DM id 108 tid 99 eid 108 etid 99 c omnetpp::cMessage n "" pe 57
+
+E # 58 t 14.8 m 6 ce 57 msg 110
+CM id 112 tid 112 eid 112 etid 112 c omnetpp::cMessage n "" pe -1
+CL id 112 tid 112 eid 110 etid 110 c DL_PDU n "" pe 58 cid 113
+BS id 112 tid 112 eid 110 etid 110 c DL_PDU n "" pe 58
+CL id 112 tid 112 eid 110 etid 110 c DL_PDU n "" pe 58 cid 114
+SH sm 6 sg 7
+ES t 14.8
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 55
+ES t 19.8
+
+E # 59 t 14.8 m 8 ce 58 msg 112
+CM id 115 tid 115 eid 115 etid 115 c omnetpp::cMessage n "" pe -1
+BS id 115 tid 115 eid 110 etid 110 c P_PDU n "" pe 59
+CL id 115 tid 115 eid 110 etid 110 c P_PDU n "" pe 59 cid 116
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 14.9
+
+E # 60 t 14.9 m 11 ce 59 msg 115
+CM id 117 tid 117 eid 117 etid 117 c omnetpp::cMessage n "" pe -1
+CL id 112 tid 112 eid 110 etid 110 c DL_PDU n "" pe 59 cid 118
+BS id 118 tid 112 eid 110 etid 110 c DL_PDU n "" pe 60
+CL id 118 tid 112 eid 110 etid 110 c DL_PDU n "" pe 60 cid 119
+SH sm 11 sg 7
+ES t 14.9
+DM id 115 tid 115 eid 115 etid 115 c omnetpp::cMessage n "" pe 60
+
+E # 61 t 14.9 m 9 ce 60 msg 118
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 50
+ES t 16.9
+
+E # 62 t 16.9 m 9 ce 61 msg 5
+CL id 110 tid 110 eid 110 etid 110 c A_PDU n "" pe 58 cid 120
+BS id 120 tid 110 eid 120 etid 110 c A_PDU n "" pe 62
+CL id 120 tid 110 eid 120 etid 110 c A_PDU n "" pe 62 cid 121
+SH sm 9 sg 3
+ES t 16.9
+
+E # 63 t 16.9 m 10 ce 62 msg 120
+CM id 122 tid 122 eid 122 etid 122 c omnetpp::cMessage n "" pe -1
+BS id 122 tid 122 eid 122 etid 122 c A_PDU n "" pe 63
+CL id 122 tid 122 eid 122 etid 122 c A_PDU n "" pe 63 cid 123
+SH sm 10 sg 3
+ES t 16.9
+DM id 120 tid 110 eid 120 etid 110 c omnetpp::cMessage n "" pe 63
+
+E # 64 t 16.9 m 9 ce 63 msg 122
+CM id 124 tid 124 eid 124 etid 124 c omnetpp::cMessage n "" pe -1
+BS id 124 tid 124 eid 122 etid 122 c DL_PDU n "" pe 64
+CL id 124 tid 124 eid 122 etid 122 c DL_PDU n "" pe 64 cid 125
+SH sm 9 sg 7
+ES t 16.9
+
+E # 65 t 16.9 m 11 ce 64 msg 124
+CM id 126 tid 126 eid 126 etid 126 c omnetpp::cMessage n "" pe -1
+BS id 126 tid 126 eid 122 etid 122 c P_PDU n "" pe 65
+CL id 126 tid 126 eid 122 etid 122 c P_PDU n "" pe 65 cid 127
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 17
+
+E # 66 t 17 m 8 ce 65 msg 126
+CM id 128 tid 128 eid 128 etid 128 c omnetpp::cMessage n "" pe -1
+CL id 124 tid 124 eid 122 etid 122 c DL_PDU n "" pe 65 cid 129
+BS id 129 tid 124 eid 122 etid 122 c DL_PDU n "" pe 66
+CL id 129 tid 124 eid 122 etid 122 c DL_PDU n "" pe 66 cid 130
+SH sm 8 sg 7
+ES t 17
+DM id 126 tid 126 eid 126 etid 126 c omnetpp::cMessage n "" pe 66
+
+E # 67 t 17 m 6 ce 66 msg 129
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 58
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 56
+ES t 18
+
+E # 68 t 18 m 6 ce 67 msg 1
+CL id 122 tid 122 eid 122 etid 122 c A_PDU n "" pe 64 cid 131
+BS id 131 tid 122 eid 131 etid 122 c A_PDU n "" pe 68
+CL id 131 tid 122 eid 131 etid 122 c A_PDU n "" pe 68 cid 132
+SH sm 6 sg 3
+ES t 18
+
+E # 69 t 18 m 7 ce 68 msg 131
+CM id 133 tid 133 eid 133 etid 133 c omnetpp::cMessage n "" pe -1
+BS id 133 tid 133 eid 133 etid 133 c A_PDU n "" pe 69
+CL id 133 tid 133 eid 133 etid 133 c A_PDU n "" pe 69 cid 134
+SH sm 7 sg 3
+ES t 18
+DM id 131 tid 122 eid 131 etid 122 c omnetpp::cMessage n "" pe 69
+
+E # 70 t 18 m 6 ce 69 msg 133
+CM id 135 tid 135 eid 135 etid 135 c omnetpp::cMessage n "" pe -1
+CL id 135 tid 135 eid 133 etid 133 c DL_PDU n "" pe 70 cid 136
+BS id 135 tid 135 eid 133 etid 133 c DL_PDU n "" pe 70
+CL id 135 tid 135 eid 133 etid 133 c DL_PDU n "" pe 70 cid 137
+SH sm 6 sg 7
+ES t 18
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 67
+ES t 23
+
+E # 71 t 18 m 8 ce 70 msg 135
+CM id 138 tid 138 eid 138 etid 138 c omnetpp::cMessage n "" pe -1
+BS id 138 tid 138 eid 133 etid 133 c P_PDU n "" pe 71
+CL id 138 tid 138 eid 133 etid 133 c P_PDU n "" pe 71 cid 139
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 18.1
+
+E # 72 t 18.1 m 11 ce 71 msg 138
+CM id 140 tid 140 eid 140 etid 140 c omnetpp::cMessage n "" pe -1
+CL id 135 tid 135 eid 133 etid 133 c DL_PDU n "" pe 71 cid 141
+BS id 141 tid 135 eid 133 etid 133 c DL_PDU n "" pe 72
+CL id 141 tid 135 eid 133 etid 133 c DL_PDU n "" pe 72 cid 142
+SH sm 11 sg 7
+ES t 18.1
+DM id 138 tid 138 eid 138 etid 138 c omnetpp::cMessage n "" pe 72
+
+E # 73 t 18.1 m 9 ce 72 msg 141
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 62
+ES t 19.1
+
+E # 74 t 19.1 m 9 ce 73 msg 5
+CL id 133 tid 133 eid 133 etid 133 c A_PDU n "" pe 70 cid 143
+BS id 143 tid 133 eid 143 etid 133 c A_PDU n "" pe 74
+CL id 143 tid 133 eid 143 etid 133 c A_PDU n "" pe 74 cid 144
+SH sm 9 sg 3
+ES t 19.1
+
+E # 75 t 19.1 m 10 ce 74 msg 143
+CM id 145 tid 145 eid 145 etid 145 c omnetpp::cMessage n "" pe -1
+BS id 145 tid 145 eid 145 etid 145 c A_PDU n "" pe 75
+CL id 145 tid 145 eid 145 etid 145 c A_PDU n "" pe 75 cid 146
+SH sm 10 sg 3
+ES t 19.1
+DM id 143 tid 133 eid 143 etid 133 c omnetpp::cMessage n "" pe 75
+
+E # 76 t 19.1 m 9 ce 75 msg 145
+CM id 147 tid 147 eid 147 etid 147 c omnetpp::cMessage n "" pe -1
+BS id 147 tid 147 eid 145 etid 145 c DL_PDU n "" pe 76
+CL id 147 tid 147 eid 145 etid 145 c DL_PDU n "" pe 76 cid 148
+SH sm 9 sg 7
+ES t 19.1
+
+E # 77 t 19.1 m 11 ce 76 msg 147
+CM id 149 tid 149 eid 149 etid 149 c omnetpp::cMessage n "" pe -1
+BS id 149 tid 149 eid 145 etid 145 c P_PDU n "" pe 77
+CL id 149 tid 149 eid 145 etid 145 c P_PDU n "" pe 77 cid 150
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 19.2
+
+E # 78 t 19.2 m 8 ce 77 msg 149
+CM id 151 tid 151 eid 151 etid 151 c omnetpp::cMessage n "" pe -1
+CL id 147 tid 147 eid 145 etid 145 c DL_PDU n "" pe 77 cid 152
+BS id 152 tid 147 eid 145 etid 145 c DL_PDU n "" pe 78
+CL id 152 tid 147 eid 145 etid 145 c DL_PDU n "" pe 78 cid 153
+SH sm 8 sg 7
+ES t 19.2
+DM id 149 tid 149 eid 149 etid 149 c omnetpp::cMessage n "" pe 78
+
+E # 79 t 19.2 m 6 ce 78 msg 152
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 70
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 68
+ES t 20.2
+
+E # 80 t 20.2 m 6 ce 79 msg 1
+CL id 145 tid 145 eid 145 etid 145 c A_PDU n "" pe 76 cid 154
+BS id 154 tid 145 eid 154 etid 145 c A_PDU n "" pe 80
+CL id 154 tid 145 eid 154 etid 145 c A_PDU n "" pe 80 cid 155
+SH sm 6 sg 3
+ES t 20.2
+
+E # 81 t 20.2 m 7 ce 80 msg 154
+CM id 156 tid 156 eid 156 etid 156 c omnetpp::cMessage n "" pe -1
+BS id 156 tid 156 eid 156 etid 156 c A_PDU n "" pe 81
+CL id 156 tid 156 eid 156 etid 156 c A_PDU n "" pe 81 cid 157
+SH sm 7 sg 3
+ES t 20.2
+DM id 154 tid 145 eid 154 etid 145 c omnetpp::cMessage n "" pe 81
+
+E # 82 t 20.2 m 6 ce 81 msg 156
+CM id 158 tid 158 eid 158 etid 158 c omnetpp::cMessage n "" pe -1
+CL id 158 tid 158 eid 156 etid 156 c DL_PDU n "" pe 82 cid 159
+BS id 158 tid 158 eid 156 etid 156 c DL_PDU n "" pe 82
+CL id 158 tid 158 eid 156 etid 156 c DL_PDU n "" pe 82 cid 160
+SH sm 6 sg 7
+ES t 20.2
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 79
+ES t 25.2
+
+E # 83 t 20.2 m 8 ce 82 msg 158
+CM id 161 tid 161 eid 161 etid 161 c omnetpp::cMessage n "" pe -1
+BS id 161 tid 161 eid 156 etid 156 c P_PDU n "" pe 83
+CL id 161 tid 161 eid 156 etid 156 c P_PDU n "" pe 83 cid 162
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 20.3
+
+E # 84 t 20.3 m 11 ce 83 msg 161
+CM id 163 tid 163 eid 163 etid 163 c omnetpp::cMessage n "" pe -1
+CL id 158 tid 158 eid 156 etid 156 c DL_PDU n "" pe 83 cid 164
+BS id 164 tid 158 eid 156 etid 156 c DL_PDU n "" pe 84
+CL id 164 tid 158 eid 156 etid 156 c DL_PDU n "" pe 84 cid 165
+SH sm 11 sg 7
+ES t 20.3
+DM id 161 tid 161 eid 161 etid 161 c omnetpp::cMessage n "" pe 84
+
+E # 85 t 20.3 m 9 ce 84 msg 164
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 74
+ES t 21.3
+
+E # 86 t 21.3 m 9 ce 85 msg 5
+CL id 156 tid 156 eid 156 etid 156 c A_PDU n "" pe 82 cid 166
+BS id 166 tid 156 eid 166 etid 156 c A_PDU n "" pe 86
+CL id 166 tid 156 eid 166 etid 156 c A_PDU n "" pe 86 cid 167
+SH sm 9 sg 3
+ES t 21.3
+
+E # 87 t 21.3 m 10 ce 86 msg 166
+CM id 168 tid 168 eid 168 etid 168 c omnetpp::cMessage n "" pe -1
+BS id 168 tid 168 eid 168 etid 168 c A_PDU n "" pe 87
+CL id 168 tid 168 eid 168 etid 168 c A_PDU n "" pe 87 cid 169
+SH sm 10 sg 3
+ES t 21.3
+DM id 166 tid 156 eid 166 etid 156 c omnetpp::cMessage n "" pe 87
+
+E # 88 t 21.3 m 9 ce 87 msg 168
+CM id 170 tid 170 eid 170 etid 170 c omnetpp::cMessage n "" pe -1
+BS id 170 tid 170 eid 168 etid 168 c DL_PDU n "" pe 88
+CL id 170 tid 170 eid 168 etid 168 c DL_PDU n "" pe 88 cid 171
+SH sm 9 sg 7
+ES t 21.3
+
+E # 89 t 21.3 m 11 ce 88 msg 170
+CM id 172 tid 172 eid 172 etid 172 c omnetpp::cMessage n "" pe -1
+BS id 172 tid 172 eid 168 etid 168 c P_PDU n "" pe 89
+CL id 172 tid 172 eid 168 etid 168 c P_PDU n "" pe 89 cid 173
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 21.4
+
+E # 90 t 21.4 m 8 ce 89 msg 172
+CM id 174 tid 174 eid 174 etid 174 c omnetpp::cMessage n "" pe -1
+CL id 170 tid 170 eid 168 etid 168 c DL_PDU n "" pe 89 cid 175
+BS id 175 tid 170 eid 168 etid 168 c DL_PDU n "" pe 90
+CL id 175 tid 170 eid 168 etid 168 c DL_PDU n "" pe 90 cid 176
+SH sm 8 sg 7
+ES t 21.4
+DM id 172 tid 172 eid 172 etid 172 c omnetpp::cMessage n "" pe 90
+
+E # 91 t 21.4 m 6 ce 90 msg 175
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 82
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 80
+ES t 22.4
+
+E # 92 t 22.4 m 6 ce 91 msg 1
+CL id 168 tid 168 eid 168 etid 168 c A_PDU n "" pe 88 cid 177
+BS id 177 tid 168 eid 177 etid 168 c A_PDU n "" pe 92
+CL id 177 tid 168 eid 177 etid 168 c A_PDU n "" pe 92 cid 178
+SH sm 6 sg 3
+ES t 22.4
+
+E # 93 t 22.4 m 7 ce 92 msg 177
+CM id 179 tid 179 eid 179 etid 179 c omnetpp::cMessage n "" pe -1
+BS id 179 tid 179 eid 179 etid 179 c A_PDU n "" pe 93
+CL id 179 tid 179 eid 179 etid 179 c A_PDU n "" pe 93 cid 180
+SH sm 7 sg 3
+ES t 22.4
+DM id 177 tid 168 eid 177 etid 168 c omnetpp::cMessage n "" pe 93
+
+E # 94 t 22.4 m 6 ce 93 msg 179
+CM id 181 tid 181 eid 181 etid 181 c omnetpp::cMessage n "" pe -1
+CL id 181 tid 181 eid 179 etid 179 c DL_PDU n "" pe 94 cid 182
+BS id 181 tid 181 eid 179 etid 179 c DL_PDU n "" pe 94
+CL id 181 tid 181 eid 179 etid 179 c DL_PDU n "" pe 94 cid 183
+SH sm 6 sg 7
+ES t 22.4
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 91
+ES t 27.4
+
+E # 95 t 22.4 m 8 ce 94 msg 181
+CM id 184 tid 184 eid 184 etid 184 c omnetpp::cMessage n "" pe -1
+BS id 184 tid 184 eid 179 etid 179 c P_PDU n "" pe 95
+CL id 184 tid 184 eid 179 etid 179 c P_PDU n "" pe 95 cid 185
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 22.5
+
+E # 96 t 22.5 m 11 ce 95 msg 184
+CM id 186 tid 186 eid 186 etid 186 c omnetpp::cMessage n "" pe -1
+CL id 181 tid 181 eid 179 etid 179 c DL_PDU n "" pe 95 cid 187
+BS id 187 tid 181 eid 179 etid 179 c DL_PDU n "" pe 96
+CL id 187 tid 181 eid 179 etid 179 c DL_PDU n "" pe 96 cid 188
+SH sm 11 sg 7
+ES t 22.5
+DM id 184 tid 184 eid 184 etid 184 c omnetpp::cMessage n "" pe 96
+
+E # 97 t 22.5 m 9 ce 96 msg 187
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 86
+ES t 24.5
+
+E # 98 t 24.5 m 9 ce 97 msg 5
+CL id 179 tid 179 eid 179 etid 179 c A_PDU n "" pe 94 cid 189
+BS id 189 tid 179 eid 189 etid 179 c A_PDU n "" pe 98
+CL id 189 tid 179 eid 189 etid 179 c A_PDU n "" pe 98 cid 190
+SH sm 9 sg 3
+ES t 24.5
+
+E # 99 t 24.5 m 10 ce 98 msg 189
+CM id 191 tid 191 eid 191 etid 191 c omnetpp::cMessage n "" pe -1
+BS id 191 tid 191 eid 191 etid 191 c A_PDU n "" pe 99
+CL id 191 tid 191 eid 191 etid 191 c A_PDU n "" pe 99 cid 192
+SH sm 10 sg 3
+ES t 24.5
+DM id 189 tid 179 eid 189 etid 179 c omnetpp::cMessage n "" pe 99
+
+E # 100 t 24.5 m 9 ce 99 msg 191
+CM id 193 tid 193 eid 193 etid 193 c omnetpp::cMessage n "" pe -1
+BS id 193 tid 193 eid 191 etid 191 c DL_PDU n "" pe 100
+CL id 193 tid 193 eid 191 etid 191 c DL_PDU n "" pe 100 cid 194
+SH sm 9 sg 7
+ES t 24.5
+
+E # 101 t 24.5 m 11 ce 100 msg 193
+CM id 195 tid 195 eid 195 etid 195 c omnetpp::cMessage n "" pe -1
+BS id 195 tid 195 eid 191 etid 191 c P_PDU n "" pe 101
+CL id 195 tid 195 eid 191 etid 191 c P_PDU n "" pe 101 cid 196
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 24.6
+
+E # 102 t 24.6 m 8 ce 101 msg 195
+CM id 197 tid 197 eid 197 etid 197 c omnetpp::cMessage n "" pe -1
+CL id 193 tid 193 eid 191 etid 191 c DL_PDU n "" pe 101 cid 198
+BS id 198 tid 193 eid 191 etid 191 c DL_PDU n "" pe 102
+CL id 198 tid 193 eid 191 etid 191 c DL_PDU n "" pe 102 cid 199
+SH sm 8 sg 7
+ES t 24.6
+DM id 195 tid 195 eid 195 etid 195 c omnetpp::cMessage n "" pe 102
+
+E # 103 t 24.6 m 6 ce 102 msg 198
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 94
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 92
+ES t 25.6
+
+E # 104 t 25.6 m 6 ce 103 msg 1
+CL id 191 tid 191 eid 191 etid 191 c A_PDU n "" pe 100 cid 200
+BS id 200 tid 191 eid 200 etid 191 c A_PDU n "" pe 104
+CL id 200 tid 191 eid 200 etid 191 c A_PDU n "" pe 104 cid 201
+SH sm 6 sg 3
+ES t 25.6
+
+E # 105 t 25.6 m 7 ce 104 msg 200
+CM id 202 tid 202 eid 202 etid 202 c omnetpp::cMessage n "" pe -1
+BS id 202 tid 202 eid 202 etid 202 c A_PDU n "" pe 105
+CL id 202 tid 202 eid 202 etid 202 c A_PDU n "" pe 105 cid 203
+SH sm 7 sg 3
+ES t 25.6
+DM id 200 tid 191 eid 200 etid 191 c omnetpp::cMessage n "" pe 105
+
+E # 106 t 25.6 m 6 ce 105 msg 202
+CM id 204 tid 204 eid 204 etid 204 c omnetpp::cMessage n "" pe -1
+CL id 204 tid 204 eid 202 etid 202 c DL_PDU n "" pe 106 cid 205
+BS id 204 tid 204 eid 202 etid 202 c DL_PDU n "" pe 106
+CL id 204 tid 204 eid 202 etid 202 c DL_PDU n "" pe 106 cid 206
+SH sm 6 sg 7
+ES t 25.6
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 103
+ES t 30.6
+
+E # 107 t 25.6 m 8 ce 106 msg 204
+CM id 207 tid 207 eid 207 etid 207 c omnetpp::cMessage n "" pe -1
+BS id 207 tid 207 eid 202 etid 202 c P_PDU n "" pe 107
+CL id 207 tid 207 eid 202 etid 202 c P_PDU n "" pe 107 cid 208
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 25.7
+
+E # 108 t 25.7 m 11 ce 107 msg 207
+CM id 209 tid 209 eid 209 etid 209 c omnetpp::cMessage n "" pe -1
+CL id 204 tid 204 eid 202 etid 202 c DL_PDU n "" pe 107 cid 210
+BS id 210 tid 204 eid 202 etid 202 c DL_PDU n "" pe 108
+CL id 210 tid 204 eid 202 etid 202 c DL_PDU n "" pe 108 cid 211
+SH sm 11 sg 7
+ES t 25.7
+DM id 207 tid 207 eid 207 etid 207 c omnetpp::cMessage n "" pe 108
+
+E # 109 t 25.7 m 9 ce 108 msg 210
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 98
+ES t 26.7
+
+E # 110 t 26.7 m 9 ce 109 msg 5
+CL id 202 tid 202 eid 202 etid 202 c A_PDU n "" pe 106 cid 212
+BS id 212 tid 202 eid 212 etid 202 c A_PDU n "" pe 110
+CL id 212 tid 202 eid 212 etid 202 c A_PDU n "" pe 110 cid 213
+SH sm 9 sg 3
+ES t 26.7
+
+E # 111 t 26.7 m 10 ce 110 msg 212
+CM id 214 tid 214 eid 214 etid 214 c omnetpp::cMessage n "" pe -1
+BS id 214 tid 214 eid 214 etid 214 c A_PDU n "" pe 111
+CL id 214 tid 214 eid 214 etid 214 c A_PDU n "" pe 111 cid 215
+SH sm 10 sg 3
+ES t 26.7
+DM id 212 tid 202 eid 212 etid 202 c omnetpp::cMessage n "" pe 111
+
+E # 112 t 26.7 m 9 ce 111 msg 214
+CM id 216 tid 216 eid 216 etid 216 c omnetpp::cMessage n "" pe -1
+BS id 216 tid 216 eid 214 etid 214 c DL_PDU n "" pe 112
+CL id 216 tid 216 eid 214 etid 214 c DL_PDU n "" pe 112 cid 217
+SH sm 9 sg 7
+ES t 26.7
+
+E # 113 t 26.7 m 11 ce 112 msg 216
+CM id 218 tid 218 eid 218 etid 218 c omnetpp::cMessage n "" pe -1
+BS id 218 tid 218 eid 214 etid 214 c P_PDU n "" pe 113
+CL id 218 tid 218 eid 214 etid 214 c P_PDU n "" pe 113 cid 219
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 26.8
+
+E # 114 t 26.8 m 8 ce 113 msg 218
+CM id 220 tid 220 eid 220 etid 220 c omnetpp::cMessage n "" pe -1
+CL id 216 tid 216 eid 214 etid 214 c DL_PDU n "" pe 113 cid 221
+BS id 221 tid 216 eid 214 etid 214 c DL_PDU n "" pe 114
+CL id 221 tid 216 eid 214 etid 214 c DL_PDU n "" pe 114 cid 222
+SH sm 8 sg 7
+ES t 26.8
+DM id 218 tid 218 eid 218 etid 218 c omnetpp::cMessage n "" pe 114
+
+E # 115 t 26.8 m 6 ce 114 msg 221
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 106
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 104
+ES t 28.8
+
+E # 116 t 28.8 m 6 ce 115 msg 1
+CL id 214 tid 214 eid 214 etid 214 c A_PDU n "" pe 112 cid 223
+BS id 223 tid 214 eid 223 etid 214 c A_PDU n "" pe 116
+CL id 223 tid 214 eid 223 etid 214 c A_PDU n "" pe 116 cid 224
+SH sm 6 sg 3
+ES t 28.8
+
+E # 117 t 28.8 m 7 ce 116 msg 223
+CM id 225 tid 225 eid 225 etid 225 c omnetpp::cMessage n "" pe -1
+BS id 225 tid 225 eid 225 etid 225 c A_PDU n "" pe 117
+CL id 225 tid 225 eid 225 etid 225 c A_PDU n "" pe 117 cid 226
+SH sm 7 sg 3
+ES t 28.8
+DM id 223 tid 214 eid 223 etid 214 c omnetpp::cMessage n "" pe 117
+
+E # 118 t 28.8 m 6 ce 117 msg 225
+CM id 227 tid 227 eid 227 etid 227 c omnetpp::cMessage n "" pe -1
+CL id 227 tid 227 eid 225 etid 225 c DL_PDU n "" pe 118 cid 228
+BS id 227 tid 227 eid 225 etid 225 c DL_PDU n "" pe 118
+CL id 227 tid 227 eid 225 etid 225 c DL_PDU n "" pe 118 cid 229
+SH sm 6 sg 7
+ES t 28.8
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 115
+ES t 33.8
+
+E # 119 t 28.8 m 8 ce 118 msg 227
+CM id 230 tid 230 eid 230 etid 230 c omnetpp::cMessage n "" pe -1
+BS id 230 tid 230 eid 225 etid 225 c P_PDU n "" pe 119
+CL id 230 tid 230 eid 225 etid 225 c P_PDU n "" pe 119 cid 231
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 28.9
+
+E # 120 t 28.9 m 11 ce 119 msg 230
+CM id 232 tid 232 eid 232 etid 232 c omnetpp::cMessage n "" pe -1
+CL id 227 tid 227 eid 225 etid 225 c DL_PDU n "" pe 119 cid 233
+BS id 233 tid 227 eid 225 etid 225 c DL_PDU n "" pe 120
+CL id 233 tid 227 eid 225 etid 225 c DL_PDU n "" pe 120 cid 234
+SH sm 11 sg 7
+ES t 28.9
+DM id 230 tid 230 eid 230 etid 230 c omnetpp::cMessage n "" pe 120
+
+E # 121 t 28.9 m 9 ce 120 msg 233
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 110
+ES t 30.9
+
+E # 122 t 30.9 m 9 ce 121 msg 5
+CL id 225 tid 225 eid 225 etid 225 c A_PDU n "" pe 118 cid 235
+BS id 235 tid 225 eid 235 etid 225 c A_PDU n "" pe 122
+CL id 235 tid 225 eid 235 etid 225 c A_PDU n "" pe 122 cid 236
+SH sm 9 sg 3
+ES t 30.9
+
+E # 123 t 30.9 m 10 ce 122 msg 235
+CM id 237 tid 237 eid 237 etid 237 c omnetpp::cMessage n "" pe -1
+BS id 237 tid 237 eid 237 etid 237 c A_PDU n "" pe 123
+CL id 237 tid 237 eid 237 etid 237 c A_PDU n "" pe 123 cid 238
+SH sm 10 sg 3
+ES t 30.9
+DM id 235 tid 225 eid 235 etid 225 c omnetpp::cMessage n "" pe 123
+
+E # 124 t 30.9 m 9 ce 123 msg 237
+CM id 239 tid 239 eid 239 etid 239 c omnetpp::cMessage n "" pe -1
+BS id 239 tid 239 eid 237 etid 237 c DL_PDU n "" pe 124
+CL id 239 tid 239 eid 237 etid 237 c DL_PDU n "" pe 124 cid 240
+SH sm 9 sg 7
+ES t 30.9
+
+E # 125 t 30.9 m 11 ce 124 msg 239
+CM id 241 tid 241 eid 241 etid 241 c omnetpp::cMessage n "" pe -1
+BS id 241 tid 241 eid 237 etid 237 c P_PDU n "" pe 125
+CL id 241 tid 241 eid 237 etid 237 c P_PDU n "" pe 125 cid 242
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 31
+
+E # 126 t 31 m 8 ce 125 msg 241
+CM id 243 tid 243 eid 243 etid 243 c omnetpp::cMessage n "" pe -1
+CL id 239 tid 239 eid 237 etid 237 c DL_PDU n "" pe 125 cid 244
+BS id 244 tid 239 eid 237 etid 237 c DL_PDU n "" pe 126
+CL id 244 tid 239 eid 237 etid 237 c DL_PDU n "" pe 126 cid 245
+SH sm 8 sg 7
+ES t 31
+DM id 241 tid 241 eid 241 etid 241 c omnetpp::cMessage n "" pe 126
+
+E # 127 t 31 m 6 ce 126 msg 244
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 118
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 116
+ES t 32
+
+E # 128 t 32 m 6 ce 127 msg 1
+CL id 237 tid 237 eid 237 etid 237 c A_PDU n "" pe 124 cid 246
+BS id 246 tid 237 eid 246 etid 237 c A_PDU n "" pe 128
+CL id 246 tid 237 eid 246 etid 237 c A_PDU n "" pe 128 cid 247
+SH sm 6 sg 3
+ES t 32
+
+E # 129 t 32 m 7 ce 128 msg 246
+CM id 248 tid 248 eid 248 etid 248 c omnetpp::cMessage n "" pe -1
+BS id 248 tid 248 eid 248 etid 248 c A_PDU n "" pe 129
+CL id 248 tid 248 eid 248 etid 248 c A_PDU n "" pe 129 cid 249
+SH sm 7 sg 3
+ES t 32
+DM id 246 tid 237 eid 246 etid 237 c omnetpp::cMessage n "" pe 129
+
+E # 130 t 32 m 6 ce 129 msg 248
+CM id 250 tid 250 eid 250 etid 250 c omnetpp::cMessage n "" pe -1
+CL id 250 tid 250 eid 248 etid 248 c DL_PDU n "" pe 130 cid 251
+BS id 250 tid 250 eid 248 etid 248 c DL_PDU n "" pe 130
+CL id 250 tid 250 eid 248 etid 248 c DL_PDU n "" pe 130 cid 252
+SH sm 6 sg 7
+ES t 32
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 127
+ES t 37
+
+E # 131 t 32 m 8 ce 130 msg 250
+CM id 253 tid 253 eid 253 etid 253 c omnetpp::cMessage n "" pe -1
+BS id 253 tid 253 eid 248 etid 248 c P_PDU n "" pe 131
+CL id 253 tid 253 eid 248 etid 248 c P_PDU n "" pe 131 cid 254
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 32.1
+
+E # 132 t 32.1 m 11 ce 131 msg 253
+CM id 255 tid 255 eid 255 etid 255 c omnetpp::cMessage n "" pe -1
+CL id 250 tid 250 eid 248 etid 248 c DL_PDU n "" pe 131 cid 256
+BS id 256 tid 250 eid 248 etid 248 c DL_PDU n "" pe 132
+CL id 256 tid 250 eid 248 etid 248 c DL_PDU n "" pe 132 cid 257
+SH sm 11 sg 7
+ES t 32.1
+DM id 253 tid 253 eid 253 etid 253 c omnetpp::cMessage n "" pe 132
+
+E # 133 t 32.1 m 9 ce 132 msg 256
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 122
+ES t 33.1
+
+E # 134 t 33.1 m 9 ce 133 msg 5
+CL id 248 tid 248 eid 248 etid 248 c A_PDU n "" pe 130 cid 258
+BS id 258 tid 248 eid 258 etid 248 c A_PDU n "" pe 134
+CL id 258 tid 248 eid 258 etid 248 c A_PDU n "" pe 134 cid 259
+SH sm 9 sg 3
+ES t 33.1
+
+E # 135 t 33.1 m 10 ce 134 msg 258
+CM id 260 tid 260 eid 260 etid 260 c omnetpp::cMessage n "" pe -1
+BS id 260 tid 260 eid 260 etid 260 c A_PDU n "" pe 135
+CL id 260 tid 260 eid 260 etid 260 c A_PDU n "" pe 135 cid 261
+SH sm 10 sg 3
+ES t 33.1
+DM id 258 tid 248 eid 258 etid 248 c omnetpp::cMessage n "" pe 135
+
+E # 136 t 33.1 m 9 ce 135 msg 260
+CM id 262 tid 262 eid 262 etid 262 c omnetpp::cMessage n "" pe -1
+BS id 262 tid 262 eid 260 etid 260 c DL_PDU n "" pe 136
+CL id 262 tid 262 eid 260 etid 260 c DL_PDU n "" pe 136 cid 263
+SH sm 9 sg 7
+ES t 33.1
+
+E # 137 t 33.1 m 11 ce 136 msg 262
+CM id 264 tid 264 eid 264 etid 264 c omnetpp::cMessage n "" pe -1
+BS id 264 tid 264 eid 260 etid 260 c P_PDU n "" pe 137
+CL id 264 tid 264 eid 260 etid 260 c P_PDU n "" pe 137 cid 265
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 33.2
+
+E # 138 t 33.2 m 8 ce 137 msg 264
+CM id 266 tid 266 eid 266 etid 266 c omnetpp::cMessage n "" pe -1
+CL id 262 tid 262 eid 260 etid 260 c DL_PDU n "" pe 137 cid 267
+BS id 267 tid 262 eid 260 etid 260 c DL_PDU n "" pe 138
+CL id 267 tid 262 eid 260 etid 260 c DL_PDU n "" pe 138 cid 268
+SH sm 8 sg 7
+ES t 33.2
+DM id 264 tid 264 eid 264 etid 264 c omnetpp::cMessage n "" pe 138
+
+E # 139 t 33.2 m 6 ce 138 msg 267
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 130
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 128
+ES t 34.2
+
+E # 140 t 34.2 m 6 ce 139 msg 1
+CL id 260 tid 260 eid 260 etid 260 c A_PDU n "" pe 136 cid 269
+BS id 269 tid 260 eid 269 etid 260 c A_PDU n "" pe 140
+CL id 269 tid 260 eid 269 etid 260 c A_PDU n "" pe 140 cid 270
+SH sm 6 sg 3
+ES t 34.2
+
+E # 141 t 34.2 m 7 ce 140 msg 269
+CM id 271 tid 271 eid 271 etid 271 c omnetpp::cMessage n "" pe -1
+BS id 271 tid 271 eid 271 etid 271 c A_PDU n "" pe 141
+CL id 271 tid 271 eid 271 etid 271 c A_PDU n "" pe 141 cid 272
+SH sm 7 sg 3
+ES t 34.2
+DM id 269 tid 260 eid 269 etid 260 c omnetpp::cMessage n "" pe 141
+
+E # 142 t 34.2 m 6 ce 141 msg 271
+CM id 273 tid 273 eid 273 etid 273 c omnetpp::cMessage n "" pe -1
+CL id 273 tid 273 eid 271 etid 271 c DL_PDU n "" pe 142 cid 274
+BS id 273 tid 273 eid 271 etid 271 c DL_PDU n "" pe 142
+CL id 273 tid 273 eid 271 etid 271 c DL_PDU n "" pe 142 cid 275
+SH sm 6 sg 7
+ES t 34.2
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 139
+ES t 39.2
+
+E # 143 t 34.2 m 8 ce 142 msg 273
+CM id 276 tid 276 eid 276 etid 276 c omnetpp::cMessage n "" pe -1
+BS id 276 tid 276 eid 271 etid 271 c P_PDU n "" pe 143
+CL id 276 tid 276 eid 271 etid 271 c P_PDU n "" pe 143 cid 277
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 34.3
+
+E # 144 t 34.3 m 11 ce 143 msg 276
+- INFO (Physical_l)layerNetwork.N2.physical_l: "Losing" message
+DM id 276 tid 276 eid 276 etid 276 c omnetpp::cMessage n "" pe 144
+
+E # 145 t 39.2 m 6 ce 142 msg 0
+- INFO (Datalink_l)layerNetwork.N1.datalink_l: Timeout expired, resending message and restarting timer
+BS id 274 tid 273 eid 271 etid 271 c DL_PDU n "" pe 142
+CL id 274 tid 273 eid 271 etid 271 c DL_PDU n "" pe 142 cid 278
+SH sm 6 sg 7
+ES t 39.2
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 145
+ES t 44.2
+
+E # 146 t 39.2 m 8 ce 145 msg 274
+CM id 279 tid 279 eid 279 etid 279 c omnetpp::cMessage n "" pe -1
+BS id 279 tid 279 eid 271 etid 271 c P_PDU n "" pe 146
+CL id 279 tid 279 eid 271 etid 271 c P_PDU n "" pe 146 cid 280
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 39.3
+
+E # 147 t 39.3 m 11 ce 146 msg 279
+CM id 281 tid 281 eid 281 etid 281 c omnetpp::cMessage n "" pe -1
+CL id 274 tid 273 eid 271 etid 271 c DL_PDU n "" pe 146 cid 282
+BS id 282 tid 273 eid 271 etid 271 c DL_PDU n "" pe 147
+CL id 282 tid 273 eid 271 etid 271 c DL_PDU n "" pe 147 cid 283
+SH sm 11 sg 7
+ES t 39.3
+DM id 279 tid 279 eid 279 etid 279 c omnetpp::cMessage n "" pe 147
+
+E # 148 t 39.3 m 9 ce 147 msg 282
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 134
+ES t 40.3
+
+E # 149 t 40.3 m 9 ce 148 msg 5
+CL id 271 tid 271 eid 271 etid 271 c A_PDU n "" pe 142 cid 284
+BS id 284 tid 271 eid 284 etid 271 c A_PDU n "" pe 149
+CL id 284 tid 271 eid 284 etid 271 c A_PDU n "" pe 149 cid 285
+SH sm 9 sg 3
+ES t 40.3
+
+E # 150 t 40.3 m 10 ce 149 msg 284
+CM id 286 tid 286 eid 286 etid 286 c omnetpp::cMessage n "" pe -1
+BS id 286 tid 286 eid 286 etid 286 c A_PDU n "" pe 150
+CL id 286 tid 286 eid 286 etid 286 c A_PDU n "" pe 150 cid 287
+SH sm 10 sg 3
+ES t 40.3
+DM id 284 tid 271 eid 284 etid 271 c omnetpp::cMessage n "" pe 150
+
+E # 151 t 40.3 m 9 ce 150 msg 286
+CM id 288 tid 288 eid 288 etid 288 c omnetpp::cMessage n "" pe -1
+BS id 288 tid 288 eid 286 etid 286 c DL_PDU n "" pe 151
+CL id 288 tid 288 eid 286 etid 286 c DL_PDU n "" pe 151 cid 289
+SH sm 9 sg 7
+ES t 40.3
+
+E # 152 t 40.3 m 11 ce 151 msg 288
+CM id 290 tid 290 eid 290 etid 290 c omnetpp::cMessage n "" pe -1
+BS id 290 tid 290 eid 286 etid 286 c P_PDU n "" pe 152
+CL id 290 tid 290 eid 286 etid 286 c P_PDU n "" pe 152 cid 291
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 40.4
+
+E # 153 t 40.4 m 8 ce 152 msg 290
+CM id 292 tid 292 eid 292 etid 292 c omnetpp::cMessage n "" pe -1
+CL id 288 tid 288 eid 286 etid 286 c DL_PDU n "" pe 152 cid 293
+BS id 293 tid 288 eid 286 etid 286 c DL_PDU n "" pe 153
+CL id 293 tid 288 eid 286 etid 286 c DL_PDU n "" pe 153 cid 294
+SH sm 8 sg 7
+ES t 40.4
+DM id 290 tid 290 eid 290 etid 290 c omnetpp::cMessage n "" pe 153
+
+E # 154 t 40.4 m 6 ce 153 msg 293
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 145
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 140
+ES t 41.4
+
+E # 155 t 41.4 m 6 ce 154 msg 1
+CL id 286 tid 286 eid 286 etid 286 c A_PDU n "" pe 151 cid 295
+BS id 295 tid 286 eid 295 etid 286 c A_PDU n "" pe 155
+CL id 295 tid 286 eid 295 etid 286 c A_PDU n "" pe 155 cid 296
+SH sm 6 sg 3
+ES t 41.4
+
+E # 156 t 41.4 m 7 ce 155 msg 295
+CM id 297 tid 297 eid 297 etid 297 c omnetpp::cMessage n "" pe -1
+BS id 297 tid 297 eid 297 etid 297 c A_PDU n "" pe 156
+CL id 297 tid 297 eid 297 etid 297 c A_PDU n "" pe 156 cid 298
+SH sm 7 sg 3
+ES t 41.4
+DM id 295 tid 286 eid 295 etid 286 c omnetpp::cMessage n "" pe 156
+
+E # 157 t 41.4 m 6 ce 156 msg 297
+CM id 299 tid 299 eid 299 etid 299 c omnetpp::cMessage n "" pe -1
+CL id 299 tid 299 eid 297 etid 297 c DL_PDU n "" pe 157 cid 300
+BS id 299 tid 299 eid 297 etid 297 c DL_PDU n "" pe 157
+CL id 299 tid 299 eid 297 etid 297 c DL_PDU n "" pe 157 cid 301
+SH sm 6 sg 7
+ES t 41.4
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 154
+ES t 46.4
+
+E # 158 t 41.4 m 8 ce 157 msg 299
+CM id 302 tid 302 eid 302 etid 302 c omnetpp::cMessage n "" pe -1
+BS id 302 tid 302 eid 297 etid 297 c P_PDU n "" pe 158
+CL id 302 tid 302 eid 297 etid 297 c P_PDU n "" pe 158 cid 303
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 41.5
+
+E # 159 t 41.5 m 11 ce 158 msg 302
+CM id 304 tid 304 eid 304 etid 304 c omnetpp::cMessage n "" pe -1
+CL id 299 tid 299 eid 297 etid 297 c DL_PDU n "" pe 158 cid 305
+BS id 305 tid 299 eid 297 etid 297 c DL_PDU n "" pe 159
+CL id 305 tid 299 eid 297 etid 297 c DL_PDU n "" pe 159 cid 306
+SH sm 11 sg 7
+ES t 41.5
+DM id 302 tid 302 eid 302 etid 302 c omnetpp::cMessage n "" pe 159
+
+E # 160 t 41.5 m 9 ce 159 msg 305
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 149
+ES t 43.5
+
+E # 161 t 43.5 m 9 ce 160 msg 5
+CL id 297 tid 297 eid 297 etid 297 c A_PDU n "" pe 157 cid 307
+BS id 307 tid 297 eid 307 etid 297 c A_PDU n "" pe 161
+CL id 307 tid 297 eid 307 etid 297 c A_PDU n "" pe 161 cid 308
+SH sm 9 sg 3
+ES t 43.5
+
+E # 162 t 43.5 m 10 ce 161 msg 307
+CM id 309 tid 309 eid 309 etid 309 c omnetpp::cMessage n "" pe -1
+BS id 309 tid 309 eid 309 etid 309 c A_PDU n "" pe 162
+CL id 309 tid 309 eid 309 etid 309 c A_PDU n "" pe 162 cid 310
+SH sm 10 sg 3
+ES t 43.5
+DM id 307 tid 297 eid 307 etid 297 c omnetpp::cMessage n "" pe 162
+
+E # 163 t 43.5 m 9 ce 162 msg 309
+CM id 311 tid 311 eid 311 etid 311 c omnetpp::cMessage n "" pe -1
+BS id 311 tid 311 eid 309 etid 309 c DL_PDU n "" pe 163
+CL id 311 tid 311 eid 309 etid 309 c DL_PDU n "" pe 163 cid 312
+SH sm 9 sg 7
+ES t 43.5
+
+E # 164 t 43.5 m 11 ce 163 msg 311
+CM id 313 tid 313 eid 313 etid 313 c omnetpp::cMessage n "" pe -1
+BS id 313 tid 313 eid 309 etid 309 c P_PDU n "" pe 164
+CL id 313 tid 313 eid 309 etid 309 c P_PDU n "" pe 164 cid 314
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 43.6
+
+E # 165 t 43.6 m 8 ce 164 msg 313
+CM id 315 tid 315 eid 315 etid 315 c omnetpp::cMessage n "" pe -1
+CL id 311 tid 311 eid 309 etid 309 c DL_PDU n "" pe 164 cid 316
+BS id 316 tid 311 eid 309 etid 309 c DL_PDU n "" pe 165
+CL id 316 tid 311 eid 309 etid 309 c DL_PDU n "" pe 165 cid 317
+SH sm 8 sg 7
+ES t 43.6
+DM id 313 tid 313 eid 313 etid 313 c omnetpp::cMessage n "" pe 165
+
+E # 166 t 43.6 m 6 ce 165 msg 316
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 157
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 155
+ES t 44.6
+
+E # 167 t 44.6 m 6 ce 166 msg 1
+CL id 309 tid 309 eid 309 etid 309 c A_PDU n "" pe 163 cid 318
+BS id 318 tid 309 eid 318 etid 309 c A_PDU n "" pe 167
+CL id 318 tid 309 eid 318 etid 309 c A_PDU n "" pe 167 cid 319
+SH sm 6 sg 3
+ES t 44.6
+
+E # 168 t 44.6 m 7 ce 167 msg 318
+CM id 320 tid 320 eid 320 etid 320 c omnetpp::cMessage n "" pe -1
+BS id 320 tid 320 eid 320 etid 320 c A_PDU n "" pe 168
+CL id 320 tid 320 eid 320 etid 320 c A_PDU n "" pe 168 cid 321
+SH sm 7 sg 3
+ES t 44.6
+DM id 318 tid 309 eid 318 etid 309 c omnetpp::cMessage n "" pe 168
+
+E # 169 t 44.6 m 6 ce 168 msg 320
+CM id 322 tid 322 eid 322 etid 322 c omnetpp::cMessage n "" pe -1
+CL id 322 tid 322 eid 320 etid 320 c DL_PDU n "" pe 169 cid 323
+BS id 322 tid 322 eid 320 etid 320 c DL_PDU n "" pe 169
+CL id 322 tid 322 eid 320 etid 320 c DL_PDU n "" pe 169 cid 324
+SH sm 6 sg 7
+ES t 44.6
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 166
+ES t 49.6
+
+E # 170 t 44.6 m 8 ce 169 msg 322
+CM id 325 tid 325 eid 325 etid 325 c omnetpp::cMessage n "" pe -1
+BS id 325 tid 325 eid 320 etid 320 c P_PDU n "" pe 170
+CL id 325 tid 325 eid 320 etid 320 c P_PDU n "" pe 170 cid 326
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 44.7
+
+E # 171 t 44.7 m 11 ce 170 msg 325
+- INFO (Physical_l)layerNetwork.N2.physical_l: "Losing" message
+DM id 325 tid 325 eid 325 etid 325 c omnetpp::cMessage n "" pe 171
+
+E # 172 t 49.6 m 6 ce 169 msg 0
+- INFO (Datalink_l)layerNetwork.N1.datalink_l: Timeout expired, resending message and restarting timer
+BS id 323 tid 322 eid 320 etid 320 c DL_PDU n "" pe 169
+CL id 323 tid 322 eid 320 etid 320 c DL_PDU n "" pe 169 cid 327
+SH sm 6 sg 7
+ES t 49.6
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 172
+ES t 54.6
+
+E # 173 t 49.6 m 8 ce 172 msg 323
+CM id 328 tid 328 eid 328 etid 328 c omnetpp::cMessage n "" pe -1
+BS id 328 tid 328 eid 320 etid 320 c P_PDU n "" pe 173
+CL id 328 tid 328 eid 320 etid 320 c P_PDU n "" pe 173 cid 329
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 49.7
+
+E # 174 t 49.7 m 11 ce 173 msg 328
+CM id 330 tid 330 eid 330 etid 330 c omnetpp::cMessage n "" pe -1
+CL id 323 tid 322 eid 320 etid 320 c DL_PDU n "" pe 173 cid 331
+BS id 331 tid 322 eid 320 etid 320 c DL_PDU n "" pe 174
+CL id 331 tid 322 eid 320 etid 320 c DL_PDU n "" pe 174 cid 332
+SH sm 11 sg 7
+ES t 49.7
+DM id 328 tid 328 eid 328 etid 328 c omnetpp::cMessage n "" pe 174
+
+E # 175 t 49.7 m 9 ce 174 msg 331
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 161
+ES t 50.7
+
+E # 176 t 50.7 m 9 ce 175 msg 5
+CL id 320 tid 320 eid 320 etid 320 c A_PDU n "" pe 169 cid 333
+BS id 333 tid 320 eid 333 etid 320 c A_PDU n "" pe 176
+CL id 333 tid 320 eid 333 etid 320 c A_PDU n "" pe 176 cid 334
+SH sm 9 sg 3
+ES t 50.7
+
+E # 177 t 50.7 m 10 ce 176 msg 333
+CM id 335 tid 335 eid 335 etid 335 c omnetpp::cMessage n "" pe -1
+BS id 335 tid 335 eid 335 etid 335 c A_PDU n "" pe 177
+CL id 335 tid 335 eid 335 etid 335 c A_PDU n "" pe 177 cid 336
+SH sm 10 sg 3
+ES t 50.7
+DM id 333 tid 320 eid 333 etid 320 c omnetpp::cMessage n "" pe 177
+
+E # 178 t 50.7 m 9 ce 177 msg 335
+CM id 337 tid 337 eid 337 etid 337 c omnetpp::cMessage n "" pe -1
+BS id 337 tid 337 eid 335 etid 335 c DL_PDU n "" pe 178
+CL id 337 tid 337 eid 335 etid 335 c DL_PDU n "" pe 178 cid 338
+SH sm 9 sg 7
+ES t 50.7
+
+E # 179 t 50.7 m 11 ce 178 msg 337
+CM id 339 tid 339 eid 339 etid 339 c omnetpp::cMessage n "" pe -1
+BS id 339 tid 339 eid 335 etid 335 c P_PDU n "" pe 179
+CL id 339 tid 339 eid 335 etid 335 c P_PDU n "" pe 179 cid 340
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 50.8
+
+E # 180 t 50.8 m 8 ce 179 msg 339
+CM id 341 tid 341 eid 341 etid 341 c omnetpp::cMessage n "" pe -1
+CL id 337 tid 337 eid 335 etid 335 c DL_PDU n "" pe 179 cid 342
+BS id 342 tid 337 eid 335 etid 335 c DL_PDU n "" pe 180
+CL id 342 tid 337 eid 335 etid 335 c DL_PDU n "" pe 180 cid 343
+SH sm 8 sg 7
+ES t 50.8
+DM id 339 tid 339 eid 339 etid 339 c omnetpp::cMessage n "" pe 180
+
+E # 181 t 50.8 m 6 ce 180 msg 342
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 172
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 167
+ES t 52.8
+
+E # 182 t 52.8 m 6 ce 181 msg 1
+CL id 335 tid 335 eid 335 etid 335 c A_PDU n "" pe 178 cid 344
+BS id 344 tid 335 eid 344 etid 335 c A_PDU n "" pe 182
+CL id 344 tid 335 eid 344 etid 335 c A_PDU n "" pe 182 cid 345
+SH sm 6 sg 3
+ES t 52.8
+
+E # 183 t 52.8 m 7 ce 182 msg 344
+CM id 346 tid 346 eid 346 etid 346 c omnetpp::cMessage n "" pe -1
+BS id 346 tid 346 eid 346 etid 346 c A_PDU n "" pe 183
+CL id 346 tid 346 eid 346 etid 346 c A_PDU n "" pe 183 cid 347
+SH sm 7 sg 3
+ES t 52.8
+DM id 344 tid 335 eid 344 etid 335 c omnetpp::cMessage n "" pe 183
+
+E # 184 t 52.8 m 6 ce 183 msg 346
+CM id 348 tid 348 eid 348 etid 348 c omnetpp::cMessage n "" pe -1
+CL id 348 tid 348 eid 346 etid 346 c DL_PDU n "" pe 184 cid 349
+BS id 348 tid 348 eid 346 etid 346 c DL_PDU n "" pe 184
+CL id 348 tid 348 eid 346 etid 346 c DL_PDU n "" pe 184 cid 350
+SH sm 6 sg 7
+ES t 52.8
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 181
+ES t 57.8
+
+E # 185 t 52.8 m 8 ce 184 msg 348
+CM id 351 tid 351 eid 351 etid 351 c omnetpp::cMessage n "" pe -1
+BS id 351 tid 351 eid 346 etid 346 c P_PDU n "" pe 185
+CL id 351 tid 351 eid 346 etid 346 c P_PDU n "" pe 185 cid 352
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 52.9
+
+E # 186 t 52.9 m 11 ce 185 msg 351
+CM id 353 tid 353 eid 353 etid 353 c omnetpp::cMessage n "" pe -1
+CL id 348 tid 348 eid 346 etid 346 c DL_PDU n "" pe 185 cid 354
+BS id 354 tid 348 eid 346 etid 346 c DL_PDU n "" pe 186
+CL id 354 tid 348 eid 346 etid 346 c DL_PDU n "" pe 186 cid 355
+SH sm 11 sg 7
+ES t 52.9
+DM id 351 tid 351 eid 351 etid 351 c omnetpp::cMessage n "" pe 186
+
+E # 187 t 52.9 m 9 ce 186 msg 354
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 176
+ES t 54.9
+
+E # 188 t 54.9 m 9 ce 187 msg 5
+CL id 346 tid 346 eid 346 etid 346 c A_PDU n "" pe 184 cid 356
+BS id 356 tid 346 eid 356 etid 346 c A_PDU n "" pe 188
+CL id 356 tid 346 eid 356 etid 346 c A_PDU n "" pe 188 cid 357
+SH sm 9 sg 3
+ES t 54.9
+
+E # 189 t 54.9 m 10 ce 188 msg 356
+CM id 358 tid 358 eid 358 etid 358 c omnetpp::cMessage n "" pe -1
+BS id 358 tid 358 eid 358 etid 358 c A_PDU n "" pe 189
+CL id 358 tid 358 eid 358 etid 358 c A_PDU n "" pe 189 cid 359
+SH sm 10 sg 3
+ES t 54.9
+DM id 356 tid 346 eid 356 etid 346 c omnetpp::cMessage n "" pe 189
+
+E # 190 t 54.9 m 9 ce 189 msg 358
+CM id 360 tid 360 eid 360 etid 360 c omnetpp::cMessage n "" pe -1
+BS id 360 tid 360 eid 358 etid 358 c DL_PDU n "" pe 190
+CL id 360 tid 360 eid 358 etid 358 c DL_PDU n "" pe 190 cid 361
+SH sm 9 sg 7
+ES t 54.9
+
+E # 191 t 54.9 m 11 ce 190 msg 360
+CM id 362 tid 362 eid 362 etid 362 c omnetpp::cMessage n "" pe -1
+BS id 362 tid 362 eid 358 etid 358 c P_PDU n "" pe 191
+CL id 362 tid 362 eid 358 etid 358 c P_PDU n "" pe 191 cid 363
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 55
+
+E # 192 t 55 m 8 ce 191 msg 362
+CM id 364 tid 364 eid 364 etid 364 c omnetpp::cMessage n "" pe -1
+CL id 360 tid 360 eid 358 etid 358 c DL_PDU n "" pe 191 cid 365
+BS id 365 tid 360 eid 358 etid 358 c DL_PDU n "" pe 192
+CL id 365 tid 360 eid 358 etid 358 c DL_PDU n "" pe 192 cid 366
+SH sm 8 sg 7
+ES t 55
+DM id 362 tid 362 eid 362 etid 362 c omnetpp::cMessage n "" pe 192
+
+E # 193 t 55 m 6 ce 192 msg 365
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 184
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 182
+ES t 56
+
+E # 194 t 56 m 6 ce 193 msg 1
+CL id 358 tid 358 eid 358 etid 358 c A_PDU n "" pe 190 cid 367
+BS id 367 tid 358 eid 367 etid 358 c A_PDU n "" pe 194
+CL id 367 tid 358 eid 367 etid 358 c A_PDU n "" pe 194 cid 368
+SH sm 6 sg 3
+ES t 56
+
+E # 195 t 56 m 7 ce 194 msg 367
+CM id 369 tid 369 eid 369 etid 369 c omnetpp::cMessage n "" pe -1
+BS id 369 tid 369 eid 369 etid 369 c A_PDU n "" pe 195
+CL id 369 tid 369 eid 369 etid 369 c A_PDU n "" pe 195 cid 370
+SH sm 7 sg 3
+ES t 56
+DM id 367 tid 358 eid 367 etid 358 c omnetpp::cMessage n "" pe 195
+
+E # 196 t 56 m 6 ce 195 msg 369
+CM id 371 tid 371 eid 371 etid 371 c omnetpp::cMessage n "" pe -1
+CL id 371 tid 371 eid 369 etid 369 c DL_PDU n "" pe 196 cid 372
+BS id 371 tid 371 eid 369 etid 369 c DL_PDU n "" pe 196
+CL id 371 tid 371 eid 369 etid 369 c DL_PDU n "" pe 196 cid 373
+SH sm 6 sg 7
+ES t 56
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 193
+ES t 61
+
+E # 197 t 56 m 8 ce 196 msg 371
+CM id 374 tid 374 eid 374 etid 374 c omnetpp::cMessage n "" pe -1
+BS id 374 tid 374 eid 369 etid 369 c P_PDU n "" pe 197
+CL id 374 tid 374 eid 369 etid 369 c P_PDU n "" pe 197 cid 375
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 56.1
+
+E # 198 t 56.1 m 11 ce 197 msg 374
+CM id 376 tid 376 eid 376 etid 376 c omnetpp::cMessage n "" pe -1
+CL id 371 tid 371 eid 369 etid 369 c DL_PDU n "" pe 197 cid 377
+BS id 377 tid 371 eid 369 etid 369 c DL_PDU n "" pe 198
+CL id 377 tid 371 eid 369 etid 369 c DL_PDU n "" pe 198 cid 378
+SH sm 11 sg 7
+ES t 56.1
+DM id 374 tid 374 eid 374 etid 374 c omnetpp::cMessage n "" pe 198
+
+E # 199 t 56.1 m 9 ce 198 msg 377
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 188
+ES t 57.1
+
+E # 200 t 57.1 m 9 ce 199 msg 5
+CL id 369 tid 369 eid 369 etid 369 c A_PDU n "" pe 196 cid 379
+BS id 379 tid 369 eid 379 etid 369 c A_PDU n "" pe 200
+CL id 379 tid 369 eid 379 etid 369 c A_PDU n "" pe 200 cid 380
+SH sm 9 sg 3
+ES t 57.1
+
+E # 201 t 57.1 m 10 ce 200 msg 379
+CM id 381 tid 381 eid 381 etid 381 c omnetpp::cMessage n "" pe -1
+BS id 381 tid 381 eid 381 etid 381 c A_PDU n "" pe 201
+CL id 381 tid 381 eid 381 etid 381 c A_PDU n "" pe 201 cid 382
+SH sm 10 sg 3
+ES t 57.1
+DM id 379 tid 369 eid 379 etid 369 c omnetpp::cMessage n "" pe 201
+
+E # 202 t 57.1 m 9 ce 201 msg 381
+CM id 383 tid 383 eid 383 etid 383 c omnetpp::cMessage n "" pe -1
+BS id 383 tid 383 eid 381 etid 381 c DL_PDU n "" pe 202
+CL id 383 tid 383 eid 381 etid 381 c DL_PDU n "" pe 202 cid 384
+SH sm 9 sg 7
+ES t 57.1
+
+E # 203 t 57.1 m 11 ce 202 msg 383
+CM id 385 tid 385 eid 385 etid 385 c omnetpp::cMessage n "" pe -1
+BS id 385 tid 385 eid 381 etid 381 c P_PDU n "" pe 203
+CL id 385 tid 385 eid 381 etid 381 c P_PDU n "" pe 203 cid 386
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 57.2
+
+E # 204 t 57.2 m 8 ce 203 msg 385
+- INFO (Physical_l)layerNetwork.N1.physical_l: "Losing" message
+DM id 385 tid 385 eid 385 etid 385 c omnetpp::cMessage n "" pe 204
+
+E # 205 t 61 m 6 ce 196 msg 0
+- INFO (Datalink_l)layerNetwork.N1.datalink_l: Timeout expired, resending message and restarting timer
+BS id 372 tid 371 eid 369 etid 369 c DL_PDU n "" pe 196
+CL id 372 tid 371 eid 369 etid 369 c DL_PDU n "" pe 196 cid 387
+SH sm 6 sg 7
+ES t 61
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 205
+ES t 66
+
+E # 206 t 61 m 8 ce 205 msg 372
+CM id 388 tid 388 eid 388 etid 388 c omnetpp::cMessage n "" pe -1
+BS id 388 tid 388 eid 369 etid 369 c P_PDU n "" pe 206
+CL id 388 tid 388 eid 369 etid 369 c P_PDU n "" pe 206 cid 389
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 61.1
+
+E # 207 t 61.1 m 11 ce 206 msg 388
+CM id 390 tid 390 eid 390 etid 390 c omnetpp::cMessage n "" pe -1
+CL id 372 tid 371 eid 369 etid 369 c DL_PDU n "" pe 206 cid 391
+BS id 391 tid 371 eid 369 etid 369 c DL_PDU n "" pe 207
+CL id 391 tid 371 eid 369 etid 369 c DL_PDU n "" pe 207 cid 392
+SH sm 11 sg 7
+ES t 61.1
+DM id 388 tid 388 eid 388 etid 388 c omnetpp::cMessage n "" pe 207
+
+E # 208 t 61.1 m 9 ce 207 msg 391
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 200
+ES t 62.1
+
+E # 209 t 62.1 m 9 ce 208 msg 5
+CL id 369 tid 369 eid 369 etid 369 c A_PDU n "" pe 200 cid 393
+BS id 393 tid 369 eid 393 etid 369 c A_PDU n "" pe 209
+CL id 393 tid 369 eid 393 etid 369 c A_PDU n "" pe 209 cid 394
+SH sm 9 sg 3
+ES t 62.1
+
+E # 210 t 62.1 m 10 ce 209 msg 393
+CM id 395 tid 395 eid 395 etid 395 c omnetpp::cMessage n "" pe -1
+BS id 395 tid 395 eid 395 etid 395 c A_PDU n "" pe 210
+CL id 395 tid 395 eid 395 etid 395 c A_PDU n "" pe 210 cid 396
+SH sm 10 sg 3
+ES t 62.1
+DM id 393 tid 369 eid 393 etid 369 c omnetpp::cMessage n "" pe 210
+
+E # 211 t 62.1 m 9 ce 210 msg 395
+CM id 397 tid 397 eid 397 etid 397 c omnetpp::cMessage n "" pe -1
+BS id 397 tid 397 eid 395 etid 395 c DL_PDU n "" pe 211
+CL id 397 tid 397 eid 395 etid 395 c DL_PDU n "" pe 211 cid 398
+SH sm 9 sg 7
+ES t 62.1
+
+E # 212 t 62.1 m 11 ce 211 msg 397
+CM id 399 tid 399 eid 399 etid 399 c omnetpp::cMessage n "" pe -1
+BS id 399 tid 399 eid 395 etid 395 c P_PDU n "" pe 212
+CL id 399 tid 399 eid 395 etid 395 c P_PDU n "" pe 212 cid 400
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 62.2
+
+E # 213 t 62.2 m 8 ce 212 msg 399
+CM id 401 tid 401 eid 401 etid 401 c omnetpp::cMessage n "" pe -1
+CL id 397 tid 397 eid 395 etid 395 c DL_PDU n "" pe 212 cid 402
+BS id 402 tid 397 eid 395 etid 395 c DL_PDU n "" pe 213
+CL id 402 tid 397 eid 395 etid 395 c DL_PDU n "" pe 213 cid 403
+SH sm 8 sg 7
+ES t 62.2
+DM id 399 tid 399 eid 399 etid 399 c omnetpp::cMessage n "" pe 213
+
+E # 214 t 62.2 m 6 ce 213 msg 402
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 205
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 194
+ES t 63.2
+
+E # 215 t 63.2 m 6 ce 214 msg 1
+CL id 395 tid 395 eid 395 etid 395 c A_PDU n "" pe 211 cid 404
+BS id 404 tid 395 eid 404 etid 395 c A_PDU n "" pe 215
+CL id 404 tid 395 eid 404 etid 395 c A_PDU n "" pe 215 cid 405
+SH sm 6 sg 3
+ES t 63.2
+
+E # 216 t 63.2 m 7 ce 215 msg 404
+CM id 406 tid 406 eid 406 etid 406 c omnetpp::cMessage n "" pe -1
+BS id 406 tid 406 eid 406 etid 406 c A_PDU n "" pe 216
+CL id 406 tid 406 eid 406 etid 406 c A_PDU n "" pe 216 cid 407
+SH sm 7 sg 3
+ES t 63.2
+DM id 404 tid 395 eid 404 etid 395 c omnetpp::cMessage n "" pe 216
+
+E # 217 t 63.2 m 6 ce 216 msg 406
+CM id 408 tid 408 eid 408 etid 408 c omnetpp::cMessage n "" pe -1
+CL id 408 tid 408 eid 406 etid 406 c DL_PDU n "" pe 217 cid 409
+BS id 408 tid 408 eid 406 etid 406 c DL_PDU n "" pe 217
+CL id 408 tid 408 eid 406 etid 406 c DL_PDU n "" pe 217 cid 410
+SH sm 6 sg 7
+ES t 63.2
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 214
+ES t 68.2
+
+E # 218 t 63.2 m 8 ce 217 msg 408
+CM id 411 tid 411 eid 411 etid 411 c omnetpp::cMessage n "" pe -1
+BS id 411 tid 411 eid 406 etid 406 c P_PDU n "" pe 218
+CL id 411 tid 411 eid 406 etid 406 c P_PDU n "" pe 218 cid 412
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 63.3
+
+E # 219 t 63.3 m 11 ce 218 msg 411
+CM id 413 tid 413 eid 413 etid 413 c omnetpp::cMessage n "" pe -1
+CL id 408 tid 408 eid 406 etid 406 c DL_PDU n "" pe 218 cid 414
+BS id 414 tid 408 eid 406 etid 406 c DL_PDU n "" pe 219
+CL id 414 tid 408 eid 406 etid 406 c DL_PDU n "" pe 219 cid 415
+SH sm 11 sg 7
+ES t 63.3
+DM id 411 tid 411 eid 411 etid 411 c omnetpp::cMessage n "" pe 219
+
+E # 220 t 63.3 m 9 ce 219 msg 414
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 209
+ES t 65.3
+
+E # 221 t 65.3 m 9 ce 220 msg 5
+CL id 406 tid 406 eid 406 etid 406 c A_PDU n "" pe 217 cid 416
+BS id 416 tid 406 eid 416 etid 406 c A_PDU n "" pe 221
+CL id 416 tid 406 eid 416 etid 406 c A_PDU n "" pe 221 cid 417
+SH sm 9 sg 3
+ES t 65.3
+
+E # 222 t 65.3 m 10 ce 221 msg 416
+CM id 418 tid 418 eid 418 etid 418 c omnetpp::cMessage n "" pe -1
+BS id 418 tid 418 eid 418 etid 418 c A_PDU n "" pe 222
+CL id 418 tid 418 eid 418 etid 418 c A_PDU n "" pe 222 cid 419
+SH sm 10 sg 3
+ES t 65.3
+DM id 416 tid 406 eid 416 etid 406 c omnetpp::cMessage n "" pe 222
+
+E # 223 t 65.3 m 9 ce 222 msg 418
+CM id 420 tid 420 eid 420 etid 420 c omnetpp::cMessage n "" pe -1
+BS id 420 tid 420 eid 418 etid 418 c DL_PDU n "" pe 223
+CL id 420 tid 420 eid 418 etid 418 c DL_PDU n "" pe 223 cid 421
+SH sm 9 sg 7
+ES t 65.3
+
+E # 224 t 65.3 m 11 ce 223 msg 420
+CM id 422 tid 422 eid 422 etid 422 c omnetpp::cMessage n "" pe -1
+BS id 422 tid 422 eid 418 etid 418 c P_PDU n "" pe 224
+CL id 422 tid 422 eid 418 etid 418 c P_PDU n "" pe 224 cid 423
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 65.4
+
+E # 225 t 65.4 m 8 ce 224 msg 422
+CM id 424 tid 424 eid 424 etid 424 c omnetpp::cMessage n "" pe -1
+CL id 420 tid 420 eid 418 etid 418 c DL_PDU n "" pe 224 cid 425
+BS id 425 tid 420 eid 418 etid 418 c DL_PDU n "" pe 225
+CL id 425 tid 420 eid 418 etid 418 c DL_PDU n "" pe 225 cid 426
+SH sm 8 sg 7
+ES t 65.4
+DM id 422 tid 422 eid 422 etid 422 c omnetpp::cMessage n "" pe 225
+
+E # 226 t 65.4 m 6 ce 225 msg 425
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 217
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 215
+ES t 66.4
+
+E # 227 t 66.4 m 6 ce 226 msg 1
+CL id 418 tid 418 eid 418 etid 418 c A_PDU n "" pe 223 cid 427
+BS id 427 tid 418 eid 427 etid 418 c A_PDU n "" pe 227
+CL id 427 tid 418 eid 427 etid 418 c A_PDU n "" pe 227 cid 428
+SH sm 6 sg 3
+ES t 66.4
+
+E # 228 t 66.4 m 7 ce 227 msg 427
+CM id 429 tid 429 eid 429 etid 429 c omnetpp::cMessage n "" pe -1
+BS id 429 tid 429 eid 429 etid 429 c A_PDU n "" pe 228
+CL id 429 tid 429 eid 429 etid 429 c A_PDU n "" pe 228 cid 430
+SH sm 7 sg 3
+ES t 66.4
+DM id 427 tid 418 eid 427 etid 418 c omnetpp::cMessage n "" pe 228
+
+E # 229 t 66.4 m 6 ce 228 msg 429
+CM id 431 tid 431 eid 431 etid 431 c omnetpp::cMessage n "" pe -1
+CL id 431 tid 431 eid 429 etid 429 c DL_PDU n "" pe 229 cid 432
+BS id 431 tid 431 eid 429 etid 429 c DL_PDU n "" pe 229
+CL id 431 tid 431 eid 429 etid 429 c DL_PDU n "" pe 229 cid 433
+SH sm 6 sg 7
+ES t 66.4
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 226
+ES t 71.4
+
+E # 230 t 66.4 m 8 ce 229 msg 431
+CM id 434 tid 434 eid 434 etid 434 c omnetpp::cMessage n "" pe -1
+BS id 434 tid 434 eid 429 etid 429 c P_PDU n "" pe 230
+CL id 434 tid 434 eid 429 etid 429 c P_PDU n "" pe 230 cid 435
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 66.5
+
+E # 231 t 66.5 m 11 ce 230 msg 434
+CM id 436 tid 436 eid 436 etid 436 c omnetpp::cMessage n "" pe -1
+CL id 431 tid 431 eid 429 etid 429 c DL_PDU n "" pe 230 cid 437
+BS id 437 tid 431 eid 429 etid 429 c DL_PDU n "" pe 231
+CL id 437 tid 431 eid 429 etid 429 c DL_PDU n "" pe 231 cid 438
+SH sm 11 sg 7
+ES t 66.5
+DM id 434 tid 434 eid 434 etid 434 c omnetpp::cMessage n "" pe 231
+
+E # 232 t 66.5 m 9 ce 231 msg 437
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 221
+ES t 67.5
+
+E # 233 t 67.5 m 9 ce 232 msg 5
+CL id 429 tid 429 eid 429 etid 429 c A_PDU n "" pe 229 cid 439
+BS id 439 tid 429 eid 439 etid 429 c A_PDU n "" pe 233
+CL id 439 tid 429 eid 439 etid 429 c A_PDU n "" pe 233 cid 440
+SH sm 9 sg 3
+ES t 67.5
+
+E # 234 t 67.5 m 10 ce 233 msg 439
+CM id 441 tid 441 eid 441 etid 441 c omnetpp::cMessage n "" pe -1
+BS id 441 tid 441 eid 441 etid 441 c A_PDU n "" pe 234
+CL id 441 tid 441 eid 441 etid 441 c A_PDU n "" pe 234 cid 442
+SH sm 10 sg 3
+ES t 67.5
+DM id 439 tid 429 eid 439 etid 429 c omnetpp::cMessage n "" pe 234
+
+E # 235 t 67.5 m 9 ce 234 msg 441
+CM id 443 tid 443 eid 443 etid 443 c omnetpp::cMessage n "" pe -1
+BS id 443 tid 443 eid 441 etid 441 c DL_PDU n "" pe 235
+CL id 443 tid 443 eid 441 etid 441 c DL_PDU n "" pe 235 cid 444
+SH sm 9 sg 7
+ES t 67.5
+
+E # 236 t 67.5 m 11 ce 235 msg 443
+CM id 445 tid 445 eid 445 etid 445 c omnetpp::cMessage n "" pe -1
+BS id 445 tid 445 eid 441 etid 441 c P_PDU n "" pe 236
+CL id 445 tid 445 eid 441 etid 441 c P_PDU n "" pe 236 cid 446
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 67.6
+
+E # 237 t 67.6 m 8 ce 236 msg 445
+CM id 447 tid 447 eid 447 etid 447 c omnetpp::cMessage n "" pe -1
+CL id 443 tid 443 eid 441 etid 441 c DL_PDU n "" pe 236 cid 448
+BS id 448 tid 443 eid 441 etid 441 c DL_PDU n "" pe 237
+CL id 448 tid 443 eid 441 etid 441 c DL_PDU n "" pe 237 cid 449
+SH sm 8 sg 7
+ES t 67.6
+DM id 445 tid 445 eid 445 etid 445 c omnetpp::cMessage n "" pe 237
+
+E # 238 t 67.6 m 6 ce 237 msg 448
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 229
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 227
+ES t 68.6
+
+E # 239 t 68.6 m 6 ce 238 msg 1
+CL id 441 tid 441 eid 441 etid 441 c A_PDU n "" pe 235 cid 450
+BS id 450 tid 441 eid 450 etid 441 c A_PDU n "" pe 239
+CL id 450 tid 441 eid 450 etid 441 c A_PDU n "" pe 239 cid 451
+SH sm 6 sg 3
+ES t 68.6
+
+E # 240 t 68.6 m 7 ce 239 msg 450
+CM id 452 tid 452 eid 452 etid 452 c omnetpp::cMessage n "" pe -1
+BS id 452 tid 452 eid 452 etid 452 c A_PDU n "" pe 240
+CL id 452 tid 452 eid 452 etid 452 c A_PDU n "" pe 240 cid 453
+SH sm 7 sg 3
+ES t 68.6
+DM id 450 tid 441 eid 450 etid 441 c omnetpp::cMessage n "" pe 240
+
+E # 241 t 68.6 m 6 ce 240 msg 452
+CM id 454 tid 454 eid 454 etid 454 c omnetpp::cMessage n "" pe -1
+CL id 454 tid 454 eid 452 etid 452 c DL_PDU n "" pe 241 cid 455
+BS id 454 tid 454 eid 452 etid 452 c DL_PDU n "" pe 241
+CL id 454 tid 454 eid 452 etid 452 c DL_PDU n "" pe 241 cid 456
+SH sm 6 sg 7
+ES t 68.6
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 238
+ES t 73.6
+
+E # 242 t 68.6 m 8 ce 241 msg 454
+CM id 457 tid 457 eid 457 etid 457 c omnetpp::cMessage n "" pe -1
+BS id 457 tid 457 eid 452 etid 452 c P_PDU n "" pe 242
+CL id 457 tid 457 eid 452 etid 452 c P_PDU n "" pe 242 cid 458
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 68.7
+
+E # 243 t 68.7 m 11 ce 242 msg 457
+CM id 459 tid 459 eid 459 etid 459 c omnetpp::cMessage n "" pe -1
+CL id 454 tid 454 eid 452 etid 452 c DL_PDU n "" pe 242 cid 460
+BS id 460 tid 454 eid 452 etid 452 c DL_PDU n "" pe 243
+CL id 460 tid 454 eid 452 etid 452 c DL_PDU n "" pe 243 cid 461
+SH sm 11 sg 7
+ES t 68.7
+DM id 457 tid 457 eid 457 etid 457 c omnetpp::cMessage n "" pe 243
+
+E # 244 t 68.7 m 9 ce 243 msg 460
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 233
+ES t 70.7
+
+E # 245 t 70.7 m 9 ce 244 msg 5
+CL id 452 tid 452 eid 452 etid 452 c A_PDU n "" pe 241 cid 462
+BS id 462 tid 452 eid 462 etid 452 c A_PDU n "" pe 245
+CL id 462 tid 452 eid 462 etid 452 c A_PDU n "" pe 245 cid 463
+SH sm 9 sg 3
+ES t 70.7
+
+E # 246 t 70.7 m 10 ce 245 msg 462
+CM id 464 tid 464 eid 464 etid 464 c omnetpp::cMessage n "" pe -1
+BS id 464 tid 464 eid 464 etid 464 c A_PDU n "" pe 246
+CL id 464 tid 464 eid 464 etid 464 c A_PDU n "" pe 246 cid 465
+SH sm 10 sg 3
+ES t 70.7
+DM id 462 tid 452 eid 462 etid 452 c omnetpp::cMessage n "" pe 246
+
+E # 247 t 70.7 m 9 ce 246 msg 464
+CM id 466 tid 466 eid 466 etid 466 c omnetpp::cMessage n "" pe -1
+BS id 466 tid 466 eid 464 etid 464 c DL_PDU n "" pe 247
+CL id 466 tid 466 eid 464 etid 464 c DL_PDU n "" pe 247 cid 467
+SH sm 9 sg 7
+ES t 70.7
+
+E # 248 t 70.7 m 11 ce 247 msg 466
+CM id 468 tid 468 eid 468 etid 468 c omnetpp::cMessage n "" pe -1
+BS id 468 tid 468 eid 464 etid 464 c P_PDU n "" pe 248
+CL id 468 tid 468 eid 464 etid 464 c P_PDU n "" pe 248 cid 469
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 70.8
+
+E # 249 t 70.8 m 8 ce 248 msg 468
+CM id 470 tid 470 eid 470 etid 470 c omnetpp::cMessage n "" pe -1
+CL id 466 tid 466 eid 464 etid 464 c DL_PDU n "" pe 248 cid 471
+BS id 471 tid 466 eid 464 etid 464 c DL_PDU n "" pe 249
+CL id 471 tid 466 eid 464 etid 464 c DL_PDU n "" pe 249 cid 472
+SH sm 8 sg 7
+ES t 70.8
+DM id 468 tid 468 eid 468 etid 468 c omnetpp::cMessage n "" pe 249
+
+E # 250 t 70.8 m 6 ce 249 msg 471
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 241
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 239
+ES t 71.8
+
+E # 251 t 71.8 m 6 ce 250 msg 1
+CL id 464 tid 464 eid 464 etid 464 c A_PDU n "" pe 247 cid 473
+BS id 473 tid 464 eid 473 etid 464 c A_PDU n "" pe 251
+CL id 473 tid 464 eid 473 etid 464 c A_PDU n "" pe 251 cid 474
+SH sm 6 sg 3
+ES t 71.8
+
+E # 252 t 71.8 m 7 ce 251 msg 473
+CM id 475 tid 475 eid 475 etid 475 c omnetpp::cMessage n "" pe -1
+BS id 475 tid 475 eid 475 etid 475 c A_PDU n "" pe 252
+CL id 475 tid 475 eid 475 etid 475 c A_PDU n "" pe 252 cid 476
+SH sm 7 sg 3
+ES t 71.8
+DM id 473 tid 464 eid 473 etid 464 c omnetpp::cMessage n "" pe 252
+
+E # 253 t 71.8 m 6 ce 252 msg 475
+CM id 477 tid 477 eid 477 etid 477 c omnetpp::cMessage n "" pe -1
+CL id 477 tid 477 eid 475 etid 475 c DL_PDU n "" pe 253 cid 478
+BS id 477 tid 477 eid 475 etid 475 c DL_PDU n "" pe 253
+CL id 477 tid 477 eid 475 etid 475 c DL_PDU n "" pe 253 cid 479
+SH sm 6 sg 7
+ES t 71.8
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 250
+ES t 76.8
+
+E # 254 t 71.8 m 8 ce 253 msg 477
+CM id 480 tid 480 eid 480 etid 480 c omnetpp::cMessage n "" pe -1
+BS id 480 tid 480 eid 475 etid 475 c P_PDU n "" pe 254
+CL id 480 tid 480 eid 475 etid 475 c P_PDU n "" pe 254 cid 481
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 71.9
+
+E # 255 t 71.9 m 11 ce 254 msg 480
+CM id 482 tid 482 eid 482 etid 482 c omnetpp::cMessage n "" pe -1
+CL id 477 tid 477 eid 475 etid 475 c DL_PDU n "" pe 254 cid 483
+BS id 483 tid 477 eid 475 etid 475 c DL_PDU n "" pe 255
+CL id 483 tid 477 eid 475 etid 475 c DL_PDU n "" pe 255 cid 484
+SH sm 11 sg 7
+ES t 71.9
+DM id 480 tid 480 eid 480 etid 480 c omnetpp::cMessage n "" pe 255
+
+E # 256 t 71.9 m 9 ce 255 msg 483
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 245
+ES t 73.9
+
+E # 257 t 73.9 m 9 ce 256 msg 5
+CL id 475 tid 475 eid 475 etid 475 c A_PDU n "" pe 253 cid 485
+BS id 485 tid 475 eid 485 etid 475 c A_PDU n "" pe 257
+CL id 485 tid 475 eid 485 etid 475 c A_PDU n "" pe 257 cid 486
+SH sm 9 sg 3
+ES t 73.9
+
+E # 258 t 73.9 m 10 ce 257 msg 485
+CM id 487 tid 487 eid 487 etid 487 c omnetpp::cMessage n "" pe -1
+BS id 487 tid 487 eid 487 etid 487 c A_PDU n "" pe 258
+CL id 487 tid 487 eid 487 etid 487 c A_PDU n "" pe 258 cid 488
+SH sm 10 sg 3
+ES t 73.9
+DM id 485 tid 475 eid 485 etid 475 c omnetpp::cMessage n "" pe 258
+
+E # 259 t 73.9 m 9 ce 258 msg 487
+CM id 489 tid 489 eid 489 etid 489 c omnetpp::cMessage n "" pe -1
+BS id 489 tid 489 eid 487 etid 487 c DL_PDU n "" pe 259
+CL id 489 tid 489 eid 487 etid 487 c DL_PDU n "" pe 259 cid 490
+SH sm 9 sg 7
+ES t 73.9
+
+E # 260 t 73.9 m 11 ce 259 msg 489
+CM id 491 tid 491 eid 491 etid 491 c omnetpp::cMessage n "" pe -1
+BS id 491 tid 491 eid 487 etid 487 c P_PDU n "" pe 260
+CL id 491 tid 491 eid 487 etid 487 c P_PDU n "" pe 260 cid 492
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 74
+
+E # 261 t 74 m 8 ce 260 msg 491
+CM id 493 tid 493 eid 493 etid 493 c omnetpp::cMessage n "" pe -1
+CL id 489 tid 489 eid 487 etid 487 c DL_PDU n "" pe 260 cid 494
+BS id 494 tid 489 eid 487 etid 487 c DL_PDU n "" pe 261
+CL id 494 tid 489 eid 487 etid 487 c DL_PDU n "" pe 261 cid 495
+SH sm 8 sg 7
+ES t 74
+DM id 491 tid 491 eid 491 etid 491 c omnetpp::cMessage n "" pe 261
+
+E # 262 t 74 m 6 ce 261 msg 494
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 253
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 251
+ES t 75
+
+E # 263 t 75 m 6 ce 262 msg 1
+CL id 487 tid 487 eid 487 etid 487 c A_PDU n "" pe 259 cid 496
+BS id 496 tid 487 eid 496 etid 487 c A_PDU n "" pe 263
+CL id 496 tid 487 eid 496 etid 487 c A_PDU n "" pe 263 cid 497
+SH sm 6 sg 3
+ES t 75
+
+E # 264 t 75 m 7 ce 263 msg 496
+CM id 498 tid 498 eid 498 etid 498 c omnetpp::cMessage n "" pe -1
+BS id 498 tid 498 eid 498 etid 498 c A_PDU n "" pe 264
+CL id 498 tid 498 eid 498 etid 498 c A_PDU n "" pe 264 cid 499
+SH sm 7 sg 3
+ES t 75
+DM id 496 tid 487 eid 496 etid 487 c omnetpp::cMessage n "" pe 264
+
+E # 265 t 75 m 6 ce 264 msg 498
+CM id 500 tid 500 eid 500 etid 500 c omnetpp::cMessage n "" pe -1
+CL id 500 tid 500 eid 498 etid 498 c DL_PDU n "" pe 265 cid 501
+BS id 500 tid 500 eid 498 etid 498 c DL_PDU n "" pe 265
+CL id 500 tid 500 eid 498 etid 498 c DL_PDU n "" pe 265 cid 502
+SH sm 6 sg 7
+ES t 75
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 262
+ES t 80
+
+E # 266 t 75 m 8 ce 265 msg 500
+CM id 503 tid 503 eid 503 etid 503 c omnetpp::cMessage n "" pe -1
+BS id 503 tid 503 eid 498 etid 498 c P_PDU n "" pe 266
+CL id 503 tid 503 eid 498 etid 498 c P_PDU n "" pe 266 cid 504
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 75.1
+
+E # 267 t 75.1 m 11 ce 266 msg 503
+- INFO (Physical_l)layerNetwork.N2.physical_l: "Losing" message
+DM id 503 tid 503 eid 503 etid 503 c omnetpp::cMessage n "" pe 267
+
+E # 268 t 80 m 6 ce 265 msg 0
+- INFO (Datalink_l)layerNetwork.N1.datalink_l: Timeout expired, resending message and restarting timer
+BS id 501 tid 500 eid 498 etid 498 c DL_PDU n "" pe 265
+CL id 501 tid 500 eid 498 etid 498 c DL_PDU n "" pe 265 cid 505
+SH sm 6 sg 7
+ES t 80
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 268
+ES t 85
+
+E # 269 t 80 m 8 ce 268 msg 501
+CM id 506 tid 506 eid 506 etid 506 c omnetpp::cMessage n "" pe -1
+BS id 506 tid 506 eid 498 etid 498 c P_PDU n "" pe 269
+CL id 506 tid 506 eid 498 etid 498 c P_PDU n "" pe 269 cid 507
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 80.1
+
+E # 270 t 80.1 m 11 ce 269 msg 506
+CM id 508 tid 508 eid 508 etid 508 c omnetpp::cMessage n "" pe -1
+CL id 501 tid 500 eid 498 etid 498 c DL_PDU n "" pe 269 cid 509
+BS id 509 tid 500 eid 498 etid 498 c DL_PDU n "" pe 270
+CL id 509 tid 500 eid 498 etid 498 c DL_PDU n "" pe 270 cid 510
+SH sm 11 sg 7
+ES t 80.1
+DM id 506 tid 506 eid 506 etid 506 c omnetpp::cMessage n "" pe 270
+
+E # 271 t 80.1 m 9 ce 270 msg 509
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 257
+ES t 81.1
+
+E # 272 t 81.1 m 9 ce 271 msg 5
+CL id 498 tid 498 eid 498 etid 498 c A_PDU n "" pe 265 cid 511
+BS id 511 tid 498 eid 511 etid 498 c A_PDU n "" pe 272
+CL id 511 tid 498 eid 511 etid 498 c A_PDU n "" pe 272 cid 512
+SH sm 9 sg 3
+ES t 81.1
+
+E # 273 t 81.1 m 10 ce 272 msg 511
+CM id 513 tid 513 eid 513 etid 513 c omnetpp::cMessage n "" pe -1
+BS id 513 tid 513 eid 513 etid 513 c A_PDU n "" pe 273
+CL id 513 tid 513 eid 513 etid 513 c A_PDU n "" pe 273 cid 514
+SH sm 10 sg 3
+ES t 81.1
+DM id 511 tid 498 eid 511 etid 498 c omnetpp::cMessage n "" pe 273
+
+E # 274 t 81.1 m 9 ce 273 msg 513
+CM id 515 tid 515 eid 515 etid 515 c omnetpp::cMessage n "" pe -1
+BS id 515 tid 515 eid 513 etid 513 c DL_PDU n "" pe 274
+CL id 515 tid 515 eid 513 etid 513 c DL_PDU n "" pe 274 cid 516
+SH sm 9 sg 7
+ES t 81.1
+
+E # 275 t 81.1 m 11 ce 274 msg 515
+CM id 517 tid 517 eid 517 etid 517 c omnetpp::cMessage n "" pe -1
+BS id 517 tid 517 eid 513 etid 513 c P_PDU n "" pe 275
+CL id 517 tid 517 eid 513 etid 513 c P_PDU n "" pe 275 cid 518
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 81.2
+
+E # 276 t 81.2 m 8 ce 275 msg 517
+CM id 519 tid 519 eid 519 etid 519 c omnetpp::cMessage n "" pe -1
+CL id 515 tid 515 eid 513 etid 513 c DL_PDU n "" pe 275 cid 520
+BS id 520 tid 515 eid 513 etid 513 c DL_PDU n "" pe 276
+CL id 520 tid 515 eid 513 etid 513 c DL_PDU n "" pe 276 cid 521
+SH sm 8 sg 7
+ES t 81.2
+DM id 517 tid 517 eid 517 etid 517 c omnetpp::cMessage n "" pe 276
+
+E # 277 t 81.2 m 6 ce 276 msg 520
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 268
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 263
+ES t 82.2
+
+E # 278 t 82.2 m 6 ce 277 msg 1
+CL id 513 tid 513 eid 513 etid 513 c A_PDU n "" pe 274 cid 522
+BS id 522 tid 513 eid 522 etid 513 c A_PDU n "" pe 278
+CL id 522 tid 513 eid 522 etid 513 c A_PDU n "" pe 278 cid 523
+SH sm 6 sg 3
+ES t 82.2
+
+E # 279 t 82.2 m 7 ce 278 msg 522
+CM id 524 tid 524 eid 524 etid 524 c omnetpp::cMessage n "" pe -1
+BS id 524 tid 524 eid 524 etid 524 c A_PDU n "" pe 279
+CL id 524 tid 524 eid 524 etid 524 c A_PDU n "" pe 279 cid 525
+SH sm 7 sg 3
+ES t 82.2
+DM id 522 tid 513 eid 522 etid 513 c omnetpp::cMessage n "" pe 279
+
+E # 280 t 82.2 m 6 ce 279 msg 524
+CM id 526 tid 526 eid 526 etid 526 c omnetpp::cMessage n "" pe -1
+CL id 526 tid 526 eid 524 etid 524 c DL_PDU n "" pe 280 cid 527
+BS id 526 tid 526 eid 524 etid 524 c DL_PDU n "" pe 280
+CL id 526 tid 526 eid 524 etid 524 c DL_PDU n "" pe 280 cid 528
+SH sm 6 sg 7
+ES t 82.2
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 277
+ES t 87.2
+
+E # 281 t 82.2 m 8 ce 280 msg 526
+CM id 529 tid 529 eid 529 etid 529 c omnetpp::cMessage n "" pe -1
+BS id 529 tid 529 eid 524 etid 524 c P_PDU n "" pe 281
+CL id 529 tid 529 eid 524 etid 524 c P_PDU n "" pe 281 cid 530
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 82.3
+
+E # 282 t 82.3 m 11 ce 281 msg 529
+CM id 531 tid 531 eid 531 etid 531 c omnetpp::cMessage n "" pe -1
+CL id 526 tid 526 eid 524 etid 524 c DL_PDU n "" pe 281 cid 532
+BS id 532 tid 526 eid 524 etid 524 c DL_PDU n "" pe 282
+CL id 532 tid 526 eid 524 etid 524 c DL_PDU n "" pe 282 cid 533
+SH sm 11 sg 7
+ES t 82.3
+DM id 529 tid 529 eid 529 etid 529 c omnetpp::cMessage n "" pe 282
+
+E # 283 t 82.3 m 9 ce 282 msg 532
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 272
+ES t 83.3
+
+E # 284 t 83.3 m 9 ce 283 msg 5
+CL id 524 tid 524 eid 524 etid 524 c A_PDU n "" pe 280 cid 534
+BS id 534 tid 524 eid 534 etid 524 c A_PDU n "" pe 284
+CL id 534 tid 524 eid 534 etid 524 c A_PDU n "" pe 284 cid 535
+SH sm 9 sg 3
+ES t 83.3
+
+E # 285 t 83.3 m 10 ce 284 msg 534
+CM id 536 tid 536 eid 536 etid 536 c omnetpp::cMessage n "" pe -1
+BS id 536 tid 536 eid 536 etid 536 c A_PDU n "" pe 285
+CL id 536 tid 536 eid 536 etid 536 c A_PDU n "" pe 285 cid 537
+SH sm 10 sg 3
+ES t 83.3
+DM id 534 tid 524 eid 534 etid 524 c omnetpp::cMessage n "" pe 285
+
+E # 286 t 83.3 m 9 ce 285 msg 536
+CM id 538 tid 538 eid 538 etid 538 c omnetpp::cMessage n "" pe -1
+BS id 538 tid 538 eid 536 etid 536 c DL_PDU n "" pe 286
+CL id 538 tid 538 eid 536 etid 536 c DL_PDU n "" pe 286 cid 539
+SH sm 9 sg 7
+ES t 83.3
+
+E # 287 t 83.3 m 11 ce 286 msg 538
+CM id 540 tid 540 eid 540 etid 540 c omnetpp::cMessage n "" pe -1
+BS id 540 tid 540 eid 536 etid 536 c P_PDU n "" pe 287
+CL id 540 tid 540 eid 536 etid 536 c P_PDU n "" pe 287 cid 541
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 83.4
+
+E # 288 t 83.4 m 8 ce 287 msg 540
+CM id 542 tid 542 eid 542 etid 542 c omnetpp::cMessage n "" pe -1
+CL id 538 tid 538 eid 536 etid 536 c DL_PDU n "" pe 287 cid 543
+BS id 543 tid 538 eid 536 etid 536 c DL_PDU n "" pe 288
+CL id 543 tid 538 eid 536 etid 536 c DL_PDU n "" pe 288 cid 544
+SH sm 8 sg 7
+ES t 83.4
+DM id 540 tid 540 eid 540 etid 540 c omnetpp::cMessage n "" pe 288
+
+E # 289 t 83.4 m 6 ce 288 msg 543
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 280
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 278
+ES t 85.4
+
+E # 290 t 85.4 m 6 ce 289 msg 1
+CL id 536 tid 536 eid 536 etid 536 c A_PDU n "" pe 286 cid 545
+BS id 545 tid 536 eid 545 etid 536 c A_PDU n "" pe 290
+CL id 545 tid 536 eid 545 etid 536 c A_PDU n "" pe 290 cid 546
+SH sm 6 sg 3
+ES t 85.4
+
+E # 291 t 85.4 m 7 ce 290 msg 545
+CM id 547 tid 547 eid 547 etid 547 c omnetpp::cMessage n "" pe -1
+BS id 547 tid 547 eid 547 etid 547 c A_PDU n "" pe 291
+CL id 547 tid 547 eid 547 etid 547 c A_PDU n "" pe 291 cid 548
+SH sm 7 sg 3
+ES t 85.4
+DM id 545 tid 536 eid 545 etid 536 c omnetpp::cMessage n "" pe 291
+
+E # 292 t 85.4 m 6 ce 291 msg 547
+CM id 549 tid 549 eid 549 etid 549 c omnetpp::cMessage n "" pe -1
+CL id 549 tid 549 eid 547 etid 547 c DL_PDU n "" pe 292 cid 550
+BS id 549 tid 549 eid 547 etid 547 c DL_PDU n "" pe 292
+CL id 549 tid 549 eid 547 etid 547 c DL_PDU n "" pe 292 cid 551
+SH sm 6 sg 7
+ES t 85.4
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 289
+ES t 90.4
+
+E # 293 t 85.4 m 8 ce 292 msg 549
+CM id 552 tid 552 eid 552 etid 552 c omnetpp::cMessage n "" pe -1
+BS id 552 tid 552 eid 547 etid 547 c P_PDU n "" pe 293
+CL id 552 tid 552 eid 547 etid 547 c P_PDU n "" pe 293 cid 553
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 85.5
+
+E # 294 t 85.5 m 11 ce 293 msg 552
+CM id 554 tid 554 eid 554 etid 554 c omnetpp::cMessage n "" pe -1
+CL id 549 tid 549 eid 547 etid 547 c DL_PDU n "" pe 293 cid 555
+BS id 555 tid 549 eid 547 etid 547 c DL_PDU n "" pe 294
+CL id 555 tid 549 eid 547 etid 547 c DL_PDU n "" pe 294 cid 556
+SH sm 11 sg 7
+ES t 85.5
+DM id 552 tid 552 eid 552 etid 552 c omnetpp::cMessage n "" pe 294
+
+E # 295 t 85.5 m 9 ce 294 msg 555
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 284
+ES t 86.5
+
+E # 296 t 86.5 m 9 ce 295 msg 5
+CL id 547 tid 547 eid 547 etid 547 c A_PDU n "" pe 292 cid 557
+BS id 557 tid 547 eid 557 etid 547 c A_PDU n "" pe 296
+CL id 557 tid 547 eid 557 etid 547 c A_PDU n "" pe 296 cid 558
+SH sm 9 sg 3
+ES t 86.5
+
+E # 297 t 86.5 m 10 ce 296 msg 557
+CM id 559 tid 559 eid 559 etid 559 c omnetpp::cMessage n "" pe -1
+BS id 559 tid 559 eid 559 etid 559 c A_PDU n "" pe 297
+CL id 559 tid 559 eid 559 etid 559 c A_PDU n "" pe 297 cid 560
+SH sm 10 sg 3
+ES t 86.5
+DM id 557 tid 547 eid 557 etid 547 c omnetpp::cMessage n "" pe 297
+
+E # 298 t 86.5 m 9 ce 297 msg 559
+CM id 561 tid 561 eid 561 etid 561 c omnetpp::cMessage n "" pe -1
+BS id 561 tid 561 eid 559 etid 559 c DL_PDU n "" pe 298
+CL id 561 tid 561 eid 559 etid 559 c DL_PDU n "" pe 298 cid 562
+SH sm 9 sg 7
+ES t 86.5
+
+E # 299 t 86.5 m 11 ce 298 msg 561
+CM id 563 tid 563 eid 563 etid 563 c omnetpp::cMessage n "" pe -1
+BS id 563 tid 563 eid 559 etid 559 c P_PDU n "" pe 299
+CL id 563 tid 563 eid 559 etid 559 c P_PDU n "" pe 299 cid 564
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 86.6
+
+E # 300 t 86.6 m 8 ce 299 msg 563
+- INFO (Physical_l)layerNetwork.N1.physical_l: "Losing" message
+DM id 563 tid 563 eid 563 etid 563 c omnetpp::cMessage n "" pe 300
+
+E # 301 t 90.4 m 6 ce 292 msg 0
+- INFO (Datalink_l)layerNetwork.N1.datalink_l: Timeout expired, resending message and restarting timer
+BS id 550 tid 549 eid 547 etid 547 c DL_PDU n "" pe 292
+CL id 550 tid 549 eid 547 etid 547 c DL_PDU n "" pe 292 cid 565
+SH sm 6 sg 7
+ES t 90.4
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 301
+ES t 95.4
+
+E # 302 t 90.4 m 8 ce 301 msg 550
+CM id 566 tid 566 eid 566 etid 566 c omnetpp::cMessage n "" pe -1
+BS id 566 tid 566 eid 547 etid 547 c P_PDU n "" pe 302
+CL id 566 tid 566 eid 547 etid 547 c P_PDU n "" pe 302 cid 567
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 90.5
+
+E # 303 t 90.5 m 11 ce 302 msg 566
+CM id 568 tid 568 eid 568 etid 568 c omnetpp::cMessage n "" pe -1
+CL id 550 tid 549 eid 547 etid 547 c DL_PDU n "" pe 302 cid 569
+BS id 569 tid 549 eid 547 etid 547 c DL_PDU n "" pe 303
+CL id 569 tid 549 eid 547 etid 547 c DL_PDU n "" pe 303 cid 570
+SH sm 11 sg 7
+ES t 90.5
+DM id 566 tid 566 eid 566 etid 566 c omnetpp::cMessage n "" pe 303
+
+E # 304 t 90.5 m 9 ce 303 msg 569
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 296
+ES t 92.5
+
+E # 305 t 92.5 m 9 ce 304 msg 5
+CL id 547 tid 547 eid 547 etid 547 c A_PDU n "" pe 296 cid 571
+BS id 571 tid 547 eid 571 etid 547 c A_PDU n "" pe 305
+CL id 571 tid 547 eid 571 etid 547 c A_PDU n "" pe 305 cid 572
+SH sm 9 sg 3
+ES t 92.5
+
+E # 306 t 92.5 m 10 ce 305 msg 571
+CM id 573 tid 573 eid 573 etid 573 c omnetpp::cMessage n "" pe -1
+BS id 573 tid 573 eid 573 etid 573 c A_PDU n "" pe 306
+CL id 573 tid 573 eid 573 etid 573 c A_PDU n "" pe 306 cid 574
+SH sm 10 sg 3
+ES t 92.5
+DM id 571 tid 547 eid 571 etid 547 c omnetpp::cMessage n "" pe 306
+
+E # 307 t 92.5 m 9 ce 306 msg 573
+CM id 575 tid 575 eid 575 etid 575 c omnetpp::cMessage n "" pe -1
+BS id 575 tid 575 eid 573 etid 573 c DL_PDU n "" pe 307
+CL id 575 tid 575 eid 573 etid 573 c DL_PDU n "" pe 307 cid 576
+SH sm 9 sg 7
+ES t 92.5
+
+E # 308 t 92.5 m 11 ce 307 msg 575
+CM id 577 tid 577 eid 577 etid 577 c omnetpp::cMessage n "" pe -1
+BS id 577 tid 577 eid 573 etid 573 c P_PDU n "" pe 308
+CL id 577 tid 577 eid 573 etid 573 c P_PDU n "" pe 308 cid 578
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 92.6
+
+E # 309 t 92.6 m 8 ce 308 msg 577
+CM id 579 tid 579 eid 579 etid 579 c omnetpp::cMessage n "" pe -1
+CL id 575 tid 575 eid 573 etid 573 c DL_PDU n "" pe 308 cid 580
+BS id 580 tid 575 eid 573 etid 573 c DL_PDU n "" pe 309
+CL id 580 tid 575 eid 573 etid 573 c DL_PDU n "" pe 309 cid 581
+SH sm 8 sg 7
+ES t 92.6
+DM id 577 tid 577 eid 577 etid 577 c omnetpp::cMessage n "" pe 309
+
+E # 310 t 92.6 m 6 ce 309 msg 580
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 301
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 290
+ES t 93.6
+
+E # 311 t 93.6 m 6 ce 310 msg 1
+CL id 573 tid 573 eid 573 etid 573 c A_PDU n "" pe 307 cid 582
+BS id 582 tid 573 eid 582 etid 573 c A_PDU n "" pe 311
+CL id 582 tid 573 eid 582 etid 573 c A_PDU n "" pe 311 cid 583
+SH sm 6 sg 3
+ES t 93.6
+
+E # 312 t 93.6 m 7 ce 311 msg 582
+CM id 584 tid 584 eid 584 etid 584 c omnetpp::cMessage n "" pe -1
+BS id 584 tid 584 eid 584 etid 584 c A_PDU n "" pe 312
+CL id 584 tid 584 eid 584 etid 584 c A_PDU n "" pe 312 cid 585
+SH sm 7 sg 3
+ES t 93.6
+DM id 582 tid 573 eid 582 etid 573 c omnetpp::cMessage n "" pe 312
+
+E # 313 t 93.6 m 6 ce 312 msg 584
+CM id 586 tid 586 eid 586 etid 586 c omnetpp::cMessage n "" pe -1
+CL id 586 tid 586 eid 584 etid 584 c DL_PDU n "" pe 313 cid 587
+BS id 586 tid 586 eid 584 etid 584 c DL_PDU n "" pe 313
+CL id 586 tid 586 eid 584 etid 584 c DL_PDU n "" pe 313 cid 588
+SH sm 6 sg 7
+ES t 93.6
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 310
+ES t 98.6
+
+E # 314 t 93.6 m 8 ce 313 msg 586
+CM id 589 tid 589 eid 589 etid 589 c omnetpp::cMessage n "" pe -1
+BS id 589 tid 589 eid 584 etid 584 c P_PDU n "" pe 314
+CL id 589 tid 589 eid 584 etid 584 c P_PDU n "" pe 314 cid 590
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 93.7
+
+E # 315 t 93.7 m 11 ce 314 msg 589
+CM id 591 tid 591 eid 591 etid 591 c omnetpp::cMessage n "" pe -1
+CL id 586 tid 586 eid 584 etid 584 c DL_PDU n "" pe 314 cid 592
+BS id 592 tid 586 eid 584 etid 584 c DL_PDU n "" pe 315
+CL id 592 tid 586 eid 584 etid 584 c DL_PDU n "" pe 315 cid 593
+SH sm 11 sg 7
+ES t 93.7
+DM id 589 tid 589 eid 589 etid 589 c omnetpp::cMessage n "" pe 315
+
+E # 316 t 93.7 m 9 ce 315 msg 592
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 305
+ES t 95.7
+
+E # 317 t 95.7 m 9 ce 316 msg 5
+CL id 584 tid 584 eid 584 etid 584 c A_PDU n "" pe 313 cid 594
+BS id 594 tid 584 eid 594 etid 584 c A_PDU n "" pe 317
+CL id 594 tid 584 eid 594 etid 584 c A_PDU n "" pe 317 cid 595
+SH sm 9 sg 3
+ES t 95.7
+
+E # 318 t 95.7 m 10 ce 317 msg 594
+CM id 596 tid 596 eid 596 etid 596 c omnetpp::cMessage n "" pe -1
+BS id 596 tid 596 eid 596 etid 596 c A_PDU n "" pe 318
+CL id 596 tid 596 eid 596 etid 596 c A_PDU n "" pe 318 cid 597
+SH sm 10 sg 3
+ES t 95.7
+DM id 594 tid 584 eid 594 etid 584 c omnetpp::cMessage n "" pe 318
+
+E # 319 t 95.7 m 9 ce 318 msg 596
+CM id 598 tid 598 eid 598 etid 598 c omnetpp::cMessage n "" pe -1
+BS id 598 tid 598 eid 596 etid 596 c DL_PDU n "" pe 319
+CL id 598 tid 598 eid 596 etid 596 c DL_PDU n "" pe 319 cid 599
+SH sm 9 sg 7
+ES t 95.7
+
+E # 320 t 95.7 m 11 ce 319 msg 598
+CM id 600 tid 600 eid 600 etid 600 c omnetpp::cMessage n "" pe -1
+BS id 600 tid 600 eid 596 etid 596 c P_PDU n "" pe 320
+CL id 600 tid 600 eid 596 etid 596 c P_PDU n "" pe 320 cid 601
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 95.8
+
+E # 321 t 95.8 m 8 ce 320 msg 600
+CM id 602 tid 602 eid 602 etid 602 c omnetpp::cMessage n "" pe -1
+CL id 598 tid 598 eid 596 etid 596 c DL_PDU n "" pe 320 cid 603
+BS id 603 tid 598 eid 596 etid 596 c DL_PDU n "" pe 321
+CL id 603 tid 598 eid 596 etid 596 c DL_PDU n "" pe 321 cid 604
+SH sm 8 sg 7
+ES t 95.8
+DM id 600 tid 600 eid 600 etid 600 c omnetpp::cMessage n "" pe 321
+
+E # 322 t 95.8 m 6 ce 321 msg 603
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 313
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 311
+ES t 96.8
+
+E # 323 t 96.8 m 6 ce 322 msg 1
+CL id 596 tid 596 eid 596 etid 596 c A_PDU n "" pe 319 cid 605
+BS id 605 tid 596 eid 605 etid 596 c A_PDU n "" pe 323
+CL id 605 tid 596 eid 605 etid 596 c A_PDU n "" pe 323 cid 606
+SH sm 6 sg 3
+ES t 96.8
+
+E # 324 t 96.8 m 7 ce 323 msg 605
+CM id 607 tid 607 eid 607 etid 607 c omnetpp::cMessage n "" pe -1
+BS id 607 tid 607 eid 607 etid 607 c A_PDU n "" pe 324
+CL id 607 tid 607 eid 607 etid 607 c A_PDU n "" pe 324 cid 608
+SH sm 7 sg 3
+ES t 96.8
+DM id 605 tid 596 eid 605 etid 596 c omnetpp::cMessage n "" pe 324
+
+E # 325 t 96.8 m 6 ce 324 msg 607
+CM id 609 tid 609 eid 609 etid 609 c omnetpp::cMessage n "" pe -1
+CL id 609 tid 609 eid 607 etid 607 c DL_PDU n "" pe 325 cid 610
+BS id 609 tid 609 eid 607 etid 607 c DL_PDU n "" pe 325
+CL id 609 tid 609 eid 607 etid 607 c DL_PDU n "" pe 325 cid 611
+SH sm 6 sg 7
+ES t 96.8
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 322
+ES t 101.8
+
+E # 326 t 96.8 m 8 ce 325 msg 609
+CM id 612 tid 612 eid 612 etid 612 c omnetpp::cMessage n "" pe -1
+BS id 612 tid 612 eid 607 etid 607 c P_PDU n "" pe 326
+CL id 612 tid 612 eid 607 etid 607 c P_PDU n "" pe 326 cid 613
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 96.9
+
+E # 327 t 96.9 m 11 ce 326 msg 612
+CM id 614 tid 614 eid 614 etid 614 c omnetpp::cMessage n "" pe -1
+CL id 609 tid 609 eid 607 etid 607 c DL_PDU n "" pe 326 cid 615
+BS id 615 tid 609 eid 607 etid 607 c DL_PDU n "" pe 327
+CL id 615 tid 609 eid 607 etid 607 c DL_PDU n "" pe 327 cid 616
+SH sm 11 sg 7
+ES t 96.9
+DM id 612 tid 612 eid 612 etid 612 c omnetpp::cMessage n "" pe 327
+
+E # 328 t 96.9 m 9 ce 327 msg 615
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 317
+ES t 98.9
+
+E # 329 t 98.9 m 9 ce 328 msg 5
+CL id 607 tid 607 eid 607 etid 607 c A_PDU n "" pe 325 cid 617
+BS id 617 tid 607 eid 617 etid 607 c A_PDU n "" pe 329
+CL id 617 tid 607 eid 617 etid 607 c A_PDU n "" pe 329 cid 618
+SH sm 9 sg 3
+ES t 98.9
+
+E # 330 t 98.9 m 10 ce 329 msg 617
+CM id 619 tid 619 eid 619 etid 619 c omnetpp::cMessage n "" pe -1
+BS id 619 tid 619 eid 619 etid 619 c A_PDU n "" pe 330
+CL id 619 tid 619 eid 619 etid 619 c A_PDU n "" pe 330 cid 620
+SH sm 10 sg 3
+ES t 98.9
+DM id 617 tid 607 eid 617 etid 607 c omnetpp::cMessage n "" pe 330
+
+E # 331 t 98.9 m 9 ce 330 msg 619
+CM id 621 tid 621 eid 621 etid 621 c omnetpp::cMessage n "" pe -1
+BS id 621 tid 621 eid 619 etid 619 c DL_PDU n "" pe 331
+CL id 621 tid 621 eid 619 etid 619 c DL_PDU n "" pe 331 cid 622
+SH sm 9 sg 7
+ES t 98.9
+
+E # 332 t 98.9 m 11 ce 331 msg 621
+CM id 623 tid 623 eid 623 etid 623 c omnetpp::cMessage n "" pe -1
+BS id 623 tid 623 eid 619 etid 619 c P_PDU n "" pe 332
+CL id 623 tid 623 eid 619 etid 619 c P_PDU n "" pe 332 cid 624
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 99
+
+E # 333 t 99 m 8 ce 332 msg 623
+CM id 625 tid 625 eid 625 etid 625 c omnetpp::cMessage n "" pe -1
+CL id 621 tid 621 eid 619 etid 619 c DL_PDU n "" pe 332 cid 626
+BS id 626 tid 621 eid 619 etid 619 c DL_PDU n "" pe 333
+CL id 626 tid 621 eid 619 etid 619 c DL_PDU n "" pe 333 cid 627
+SH sm 8 sg 7
+ES t 99
+DM id 623 tid 623 eid 623 etid 623 c omnetpp::cMessage n "" pe 333
+
+E # 334 t 99 m 6 ce 333 msg 626
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 325
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 323
+ES t 100
+
+E # 335 t 100 m 6 ce 334 msg 1
+CL id 619 tid 619 eid 619 etid 619 c A_PDU n "" pe 331 cid 628
+BS id 628 tid 619 eid 628 etid 619 c A_PDU n "" pe 335
+CL id 628 tid 619 eid 628 etid 619 c A_PDU n "" pe 335 cid 629
+SH sm 6 sg 3
+ES t 100
+
+E # 336 t 100 m 7 ce 335 msg 628
+CM id 630 tid 630 eid 630 etid 630 c omnetpp::cMessage n "" pe -1
+BS id 630 tid 630 eid 630 etid 630 c A_PDU n "" pe 336
+CL id 630 tid 630 eid 630 etid 630 c A_PDU n "" pe 336 cid 631
+SH sm 7 sg 3
+ES t 100
+DM id 628 tid 619 eid 628 etid 619 c omnetpp::cMessage n "" pe 336
+
+E # 337 t 100 m 6 ce 336 msg 630
+CM id 632 tid 632 eid 632 etid 632 c omnetpp::cMessage n "" pe -1
+CL id 632 tid 632 eid 630 etid 630 c DL_PDU n "" pe 337 cid 633
+BS id 632 tid 632 eid 630 etid 630 c DL_PDU n "" pe 337
+CL id 632 tid 632 eid 630 etid 630 c DL_PDU n "" pe 337 cid 634
+SH sm 6 sg 7
+ES t 100
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 334
+ES t 105
+
+E # 338 t 100 m 8 ce 337 msg 632
+CM id 635 tid 635 eid 635 etid 635 c omnetpp::cMessage n "" pe -1
+BS id 635 tid 635 eid 630 etid 630 c P_PDU n "" pe 338
+CL id 635 tid 635 eid 630 etid 630 c P_PDU n "" pe 338 cid 636
+SH sm 8 sg 3
+SH sm 2 sg 3 pd 0.1
+SH sm 3 sg 0
+ES t 100.1
+
+E # 339 t 100.1 m 11 ce 338 msg 635
+CM id 637 tid 637 eid 637 etid 637 c omnetpp::cMessage n "" pe -1
+CL id 632 tid 632 eid 630 etid 630 c DL_PDU n "" pe 338 cid 638
+BS id 638 tid 632 eid 630 etid 630 c DL_PDU n "" pe 339
+CL id 638 tid 632 eid 630 etid 630 c DL_PDU n "" pe 339 cid 639
+SH sm 11 sg 7
+ES t 100.1
+DM id 635 tid 635 eid 635 etid 635 c omnetpp::cMessage n "" pe 339
+
+E # 340 t 100.1 m 9 ce 339 msg 638
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n delayEvent pe 329
+ES t 102.1
+
+E # 341 t 102.1 m 9 ce 340 msg 5
+CL id 630 tid 630 eid 630 etid 630 c A_PDU n "" pe 337 cid 640
+BS id 640 tid 630 eid 640 etid 630 c A_PDU n "" pe 341
+CL id 640 tid 630 eid 640 etid 630 c A_PDU n "" pe 341 cid 641
+SH sm 9 sg 3
+ES t 102.1
+
+E # 342 t 102.1 m 10 ce 341 msg 640
+CM id 642 tid 642 eid 642 etid 642 c omnetpp::cMessage n "" pe -1
+BS id 642 tid 642 eid 642 etid 642 c A_PDU n "" pe 342
+CL id 642 tid 642 eid 642 etid 642 c A_PDU n "" pe 342 cid 643
+SH sm 10 sg 3
+ES t 102.1
+DM id 640 tid 630 eid 640 etid 630 c omnetpp::cMessage n "" pe 342
+
+E # 343 t 102.1 m 9 ce 342 msg 642
+CM id 644 tid 644 eid 644 etid 644 c omnetpp::cMessage n "" pe -1
+BS id 644 tid 644 eid 642 etid 642 c DL_PDU n "" pe 343
+CL id 644 tid 644 eid 642 etid 642 c DL_PDU n "" pe 343 cid 645
+SH sm 9 sg 7
+ES t 102.1
+
+E # 344 t 102.1 m 11 ce 343 msg 644
+CM id 646 tid 646 eid 646 etid 646 c omnetpp::cMessage n "" pe -1
+BS id 646 tid 646 eid 642 etid 642 c P_PDU n "" pe 344
+CL id 646 tid 646 eid 642 etid 642 c P_PDU n "" pe 344 cid 647
+SH sm 11 sg 3
+SH sm 3 sg 3 pd 0.1
+SH sm 2 sg 0
+ES t 102.2
+
+E # 345 t 102.2 m 8 ce 344 msg 646
+CM id 648 tid 648 eid 648 etid 648 c omnetpp::cMessage n "" pe -1
+CL id 644 tid 644 eid 642 etid 642 c DL_PDU n "" pe 344 cid 649
+BS id 649 tid 644 eid 642 etid 642 c DL_PDU n "" pe 345
+CL id 649 tid 644 eid 642 etid 642 c DL_PDU n "" pe 345 cid 650
+SH sm 8 sg 7
+ES t 102.2
+DM id 646 tid 646 eid 646 etid 646 c omnetpp::cMessage n "" pe 345
+
+E # 346 t 102.2 m 6 ce 345 msg 649
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe 337
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n delayEvent pe 335
+ES t 103.2
+
+E # 347 t 103.2 m 6 ce 346 msg 1
+CL id 642 tid 642 eid 642 etid 642 c A_PDU n "" pe 343 cid 651
+BS id 651 tid 642 eid 651 etid 642 c A_PDU n "" pe 347
+CL id 651 tid 642 eid 651 etid 642 c A_PDU n "" pe 347 cid 652
+SH sm 6 sg 3
+ES t 103.2
+
+E # 348 t 103.2 m 7 ce 347 msg 651
+DM id 651 tid 642 eid 651 etid 642 c omnetpp::cMessage n "" pe 348
+SE e 0 c 13 m "No more events -- simulation ended at event #348, t=103.2."
+MS id 6 d "t=rcvd: 52 sent: 58;p=275,308"
+MS id 7 d "t=rcvd: 25 sent: 26;p=63,521"
+MS id 8 d "t=rcvd: 61 sent: 58;p=452,111"
+MS id 9 d "t=rcvd: 58 sent: 58;p=275,308"
+MS id 10 d "t=rcvd: 29 sent: 29;p=63,521"
+MS id 11 d "t=rcvd: 61 sent: 58;p=452,111"

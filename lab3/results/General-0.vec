@@ -1,0 +1,74 @@
+version 2
+run General-0-20170208-19:41:28-28555
+attr configname General
+attr datetime 20170208-19:41:28
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network layerNetwork
+attr processid 28555
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 0  layerNetwork.N2.application_l  ""  ETV
+vector 1  layerNetwork.N1.application_l  ""  ETV
+0	6	1.1	0
+0	18	3.3	2
+0	30	5.5	4
+0	39	11.5	4
+0	51	13.7	6
+0	63	16.9	8
+0	75	19.1	10
+0	87	21.3	12
+0	99	24.5	14
+0	111	26.7	16
+0	123	30.9	18
+0	135	33.1	20
+0	150	40.3	22
+0	162	43.5	24
+0	177	50.7	26
+0	189	54.9	28
+0	201	57.1	30
+0	210	62.1	30
+0	222	65.3	32
+0	234	67.5	34
+0	246	70.7	36
+0	258	73.9	38
+0	273	81.1	40
+0	285	83.3	42
+0	297	86.5	44
+0	306	92.5	44
+0	318	95.7	46
+0	330	98.9	48
+0	342	102.1	50
+1	12	2.2	1
+1	24	4.4	3
+1	45	12.6	5
+1	57	14.8	7
+1	69	18	9
+1	81	20.2	11
+1	93	22.4	13
+1	105	25.6	15
+1	117	28.8	17
+1	129	32	19
+1	141	34.2	21
+1	156	41.4	23
+1	168	44.6	25
+1	183	52.8	27
+1	195	56	29
+1	216	63.2	31
+1	228	66.4	33
+1	240	68.6	35
+1	252	71.8	37
+1	264	75	39
+1	279	82.2	41
+1	291	85.4	43
+1	312	93.6	45
+1	324	96.8	47
+1	336	100	49
+1	348	103.2	51
